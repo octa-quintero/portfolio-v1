@@ -4,8 +4,12 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       "cdn.discordapp.com",
-      "openweathermap.org"
+      "openweathermap.org",
     ],
+  },
+  i18n: {
+    defaultLocale: "en", // El idioma por defecto
+    locales: ["en", "es"], // Los idiomas disponibles
   },
 };
 

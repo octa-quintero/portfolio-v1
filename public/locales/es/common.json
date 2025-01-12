@@ -1,0 +1,18 @@
+{
+    "header": {
+      "name": "Octavio Quintero",
+      "title": "DESARROLLADOR FULL STACK",
+      "description": "Actualmente, me estoy desarrollando como programador Full Stack, donde implemento mi capacidad para crear aplicaciones completas, desde la conceptualización hasta la ejecución."
+    },
+    "location": {
+      "label": "UBICACIÓN",
+      "city": "NYC",
+      "country": "EE. UU."
+    },
+    "age": {
+      "label": "EDAD",
+      "value": "22",
+      "suffix": "AÑOS"
+    }
+  }
+  

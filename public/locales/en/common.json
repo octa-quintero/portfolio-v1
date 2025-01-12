@@ -1,0 +1,18 @@
+{
+    "header": {
+      "name": "Octavio Quintero",
+      "title": "FULL STACK DEVELOPER",
+      "description": "Currently developing as a Full Stack Developer, implementing my ability to create full applications, from conceptualization to execution."
+    },
+    "location": {
+      "label": "LOCATION",
+      "city": "NYC",
+      "country": "USA"
+    },
+    "age": {
+      "label": "AGE",
+      "value": "22",
+      "suffix": "YEARS OLD"
+    }
+  }
+  
