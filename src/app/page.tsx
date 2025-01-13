@@ -14,28 +14,27 @@ import CardProject from "@/components/ui/cards/card-project";
 import CardSkills from "@/components/ui/cards/card-skills";
 import CardEmail from "@/components/ui/cards/card-email";
 import CardWhatsApp from "@/components/ui/cards/whatsapp";
+import LanguageSwitch from "@/components/ui/cards/card-languaje";
 
 
 export default function App() {
   return (
     <>
       <Grid columns={4} rows={6}>
-        <CardInformation
-          image="/logo.png"
-          title="FULL STACK DEVELOPER"
-          name="Octavio Quintero"
-          text="Actualmente, me estoy desarrollando como programador Full Stack, donde implemento mi capacidad para crear aplicaciones completas, desde la conceptualización hasta la ejecución."
-          background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
-          colStart={1}
-          colSpan={3}
-          rowStart={1}
-          rowSpan={2}
-        />
-        <CardText
+      <CardInformation
+  image="/logo.png"
+  title="full_stack_developer" // Clave de traducción
+  name="octavio_quintero" // Clave de traducción
+  text="programador_texto" // Clave de traducción
+  background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
+  colStart={1}
+  colSpan={3}
+  rowStart={1}
+  rowSpan={2}
+/>
+
+        <LanguageSwitch
           background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
-          title="LOCATION"
-          mainText="NYC"
-          subtitle="USA"
           colStart={4} // Comienza en la columna 1
           colSpan={1}
           rowStart={1}
@@ -46,18 +45,18 @@ export default function App() {
           colStart={4}
           colSpan={1}
           rowStart={2}
-          rowSpan={1}
-        />
-        <CardText
-          background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
-          title="AGE"
-          mainText="22"
-          subtitle="YEARS OLD"
-          colStart={1} // Comienza en la columna 1
-          colSpan={1}
-          rowStart={3}
-          rowSpan={1}
-        />
+          rowSpan={1} titleKey={""} subtitleKey={""}        />
+<CardText
+  background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
+  titleKey="age" // Usamos la clave de traducción
+  mainText="22"
+  subtitleKey="years_old" // Usamos la clave de traducción
+  colStart={1} // Comienza en la columna 1
+  colSpan={1}
+  rowStart={3}
+  rowSpan={1}
+/>
+
           <CardLinkedin
             link="https://www.linkedin.com/"
             icon={FaLinkedinIn}
@@ -93,9 +92,9 @@ export default function App() {
         />
         <CardText
           background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
-          title=""
+          titleKey=""
           mainText="+4"
-          subtitle="YEARS OLD"
+          subtitleKey="YEARS OLD"
           colStart={4} // Comienza en la columna 1
           colSpan={1}
           rowStart={4}
@@ -130,8 +129,7 @@ export default function App() {
           colStart={2}
           colSpan={2}
           rowStart={6}
-          rowSpan={1}
-        />
+          rowSpan={1} titleKey={""} subtitleKey={""}/>
         <CardWhatsApp
                 icon={FaWhatsapp}
                 link="https://wa.me/+393445549403"

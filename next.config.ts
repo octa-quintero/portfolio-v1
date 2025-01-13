@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   i18n: {
     defaultLocale: "en", // El idioma por defecto
     locales: ["en", "es"], // Los idiomas disponibles
+    localeDetection: false,
   },
 };
 
