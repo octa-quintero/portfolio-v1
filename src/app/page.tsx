@@ -49,7 +49,7 @@ export default function App() {
 <CardText
   background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
   titleKey="age" // Usamos la clave de traducción
-  mainText="22"
+  mainText="31"
   subtitleKey="years_old" // Usamos la clave de traducción
   colStart={1} // Comienza en la columna 1
   colSpan={1}
@@ -65,22 +65,27 @@ export default function App() {
             rowStart={3}
             rowSpan={1}
           />
-        <CardProject
-  link="https://github.com/octa-quintero"
-  icon={FaCode}
+<CardProject
+  link="https://github.com/octavio-quintero"
+  Icon={<FaCode size={45} className="text-gray-900 group-hover:text-white transition-all duration-300" />} // Pasa el icono como JSX
   colStart={3}
   colSpan={2}
   rowStart={3}
   rowSpan={1}
+  titleKey="project"
+  subtitleKey="project_description"
 />
+
+
 <CardGitHub
   link="https://github.com/octa-quintero"
-  icon={FaGithub}
+  Icon={<FaGithub size={45} className="text-gray-900 group-hover:text-white transition-all duration-300" />} // Icono como JSX
   colStart={1}
   colSpan={2}
   rowStart={4}
   rowSpan={1}
 />
+
 
 
         <CardSkills

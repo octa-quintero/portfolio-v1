@@ -6,13 +6,15 @@ const resources = {
   en: {
     translation: {
       "location": "LOCATION",
-      "full_stack_developer": "FULL STACK DEVELOPER", // Traducción al inglés
+      "full_stack_developer": "FULL STACK DEVELOPER",
       "age": "AGE",
       "years_old": "YEARS OLD",
-      "octavio_quintero": "Octavio Quintero", // Nombre no necesita traducción
-      "programador_texto": "Currently, I am developing as a Full Stack programmer, where I implement my ability to create complete applications, from conceptualization to execution.", // Traducción al inglés
+      "octavio_quintero": "Octavio Quintero",
+      "programador_texto": "Currently, I am developing as a Full Stack programmer, where I implement my ability to create complete applications, from conceptualization to execution.",
       "project": "PROJECT",
+      "project_description": "Discover my latest projects",
       "github": "GITHUB",
+      "github_description": "Explore my projects and contributions",
       "recently_listened": "Recently listened",
       "listen_on_spotify": "Listen on Spotify",
       "clear_sky": "Clear Sky",
@@ -22,13 +24,15 @@ const resources = {
   es: {
     translation: {
       "location": "UBICACIÓN",
-      "full_stack_developer": "DESARROLLADOR FULL STACK", // Traducción al español
-      "octavio_quintero": "Octavio Quintero", // Nombre no necesita traducción
+      "full_stack_developer": "DESARROLLADOR FULL STACK",
       "age": "EDAD",
       "years_old": "AÑOS",
-      "programador_texto": "Actualmente, me estoy desarrollando como programador Full Stack, donde implemento mi capacidad para crear aplicaciones completas, desde la conceptualización hasta la ejecución.", // Texto en español
-      "project": "PROYECTO",
+      "octavio_quintero": "Octavio Quintero",
+      "programador_texto": "Actualmente, me estoy desarrollando como programador Full Stack, donde implemento mi capacidad para crear aplicaciones completas, desde la conceptualización hasta la ejecución.",
+      "project": "PROYECTOS",
+      "project_description": "Descubre mis proyectos más recientes",
       "github": "GITHUB",
+      "github_description": "Explora mis proyectos y contribuciones",
       "recently_listened": "Escuchado recientemente",
       "listen_on_spotify": "Escuchar en Spotify",
       "clear_sky": "Cielo claro",
@@ -49,4 +53,3 @@ i18n
   });
 
 export default i18n;
-
