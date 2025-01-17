@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next'; // Importamos el hook de i18n
+import { useTranslation } from 'react-i18next';
+
 
 interface CardInformationInterface {
-  image: string;  // URL de la imagen que se pasará al componente
+  image: string;
   title: string;
   text: string;
   name?: string;
@@ -58,9 +59,10 @@ export default function CardInformation({
 <p className="text-left text-5xl text-white font-semibold m-0">
   {t(title)}
 </p>
-<p className="text-left text-1xl text-white mt-5">
+<p className={`font-quicksand font-light text-xl text-white`}>
   {t(text)}
 </p>
+
 
       </div>
       <div

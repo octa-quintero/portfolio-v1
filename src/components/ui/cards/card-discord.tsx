@@ -1,6 +1,10 @@
+'use client';
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Ya no necesitas importar <a> ni usarla
+import Link from "next/link";
 import { FaDiscord } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface CardDiscordInterface {
   userId: string;
@@ -11,7 +15,7 @@ interface CardDiscordInterface {
   invitationLink: string;
 }
 
-export default async function CardDiscord({
+export default function CardDiscord({
   colStart = 1,
   colSpan = 1,
   rowStart = 1,
@@ -19,8 +23,33 @@ export default async function CardDiscord({
   userId,
   invitationLink,
 }: CardDiscordInterface) {
-  const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
-  const { data } = await response.json();
+  const { t } = useTranslation(); // Hook de traducción
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [data, setData] = useState<any>(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+        const result = await response.json();
+        setData(result.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchData();
+  }, [userId]);
+
+  if (!data) {
+    return (
+      <div
+        className={`bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center rounded-2xl col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
+      >
+        <p className="text-white">Loading...</p>
+      </div>
+    );
+  }
 
   const vscodeActivity = data.activities?.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -42,12 +71,11 @@ export default async function CardDiscord({
     <Link
       href={invitationLink}
       target="_blank"
-      className={`group bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} overflow-hidden`} 
+      className={`group bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} overflow-hidden`}
     >
-      {/* Efecto con z-0, asegurando que esté detrás de todos los demás elementos */}
       <span className="absolute inset-0 bg-[#18191c] opacity-0 transition-all duration-500 rounded-full scale-0 group-hover:scale-150 group-hover:opacity-80 z-0" />
 
-      <div className="flex gap-3 items-center relative z-20"> {/* z-20 para que el contenido esté por encima del efecto */}
+      <div className="flex gap-3 items-center relative z-20">
         <div
           className={`relative flex items-center justify-center rounded-sm ${iconColor} ${
             data.discord_status === "online"
@@ -76,24 +104,24 @@ export default async function CardDiscord({
           />
         </div>
 
-        <div className="text-white text-3xl font-semibold z-20"> {/* z-20 para el texto */}
+        <div className="text-white text-3xl font-semibold z-20">
           <p>
             {data.discord_status === "online"
-              ? "Online"
+              ? t("online")
               : data.discord_status === "offline"
-              ? "Offline"
+              ? t("offline")
               : data.discord_status === "dnd"
-              ? "No molestar"
+              ? t("do_not_disturb")
               : data.discord_status === "idle"
-              ? "Ausente"
-              : "Unknown"}
+              ? t("idle")
+              : t("unknown")}
           </p>
         </div>
       </div>
 
       {data.discord_status !== "offline" && vscodeActivity ? (
-        <section className="absolute bottom-3 flex flex-col text-white mx-4 z-20"> {/* z-20 para la sección de actividad */}
-          <p className="text-sm font-bold">Actualmente en:</p>
+        <section className="absolute bottom-3 flex flex-col text-white mx-4 z-20">
+          <p className="text-sm font-bold">{t("currently_in")}:</p>
           <div className="flex items-center gap-2">
             <p className="text-sm font-normal">{vscodeActivity.name}</p>
             <Image

@@ -17,6 +17,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        quicksand: ['Quicksand', 'sans-serif'],
+      },
       animation: {
         "glowing-green": "glowing-green 1.5s ease-in-out infinite",
         "glowing-gray": "glowing-gray 1.5s ease-in-out infinite",

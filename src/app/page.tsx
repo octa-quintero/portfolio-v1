@@ -121,7 +121,7 @@ export default function App() {
           invitationLink="https://discord.gg/Y3cf2PARER"
         />
         <CardEmail
-          link="https://google.com"
+          link="octa.quinteroo@gmail.com"
           icon={SiGmail}
           colStart={4}
           colSpan={1}

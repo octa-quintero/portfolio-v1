@@ -21,7 +21,7 @@ export default function CardEmail({
 }: CardLinkInterface) {
   return (
     <Link
-      href={link}
+      href={`mailto:${link}`}
       target="_blank"
       className={`group bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center outline-slate-50 relative rounded-2xl transition-all duration-300 w-full z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} overflow-hidden`}
     >

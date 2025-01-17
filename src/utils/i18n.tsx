@@ -15,10 +15,16 @@ const resources = {
       "project_description": "Discover my latest projects",
       "github": "GITHUB",
       "github_description": "Explore my projects and contributions",
-      "recently_listened": "Recently listened",
-      "listen_on_spotify": "Listen on Spotify",
+      "recently_listened": "Recently listened", // Traducción agregada
+      "listen_on_spotify": "Listen on Spotify", // Traducción agregada
       "clear_sky": "Clear Sky",
       "milan": "Milan, IT",
+      "online": "Online",
+      "offline": "Offline",
+      "do_not_disturb": "Do Not Disturb",
+      "idle": "Idle",
+      "unknown": "Unknown",
+      "currently_in": "Currently in"
     },
   },
   es: {
@@ -33,10 +39,16 @@ const resources = {
       "project_description": "Descubre mis proyectos más recientes",
       "github": "GITHUB",
       "github_description": "Explora mis proyectos y contribuciones",
-      "recently_listened": "Escuchado recientemente",
-      "listen_on_spotify": "Escuchar en Spotify",
+      "recently_listened": "Escuchado recientemente", // Traducción agregada
+      "listen_on_spotify": "Escuchar en Spotify", // Traducción agregada
       "clear_sky": "Cielo claro",
       "milan": "Milán, IT",
+      "online": "En línea",
+      "offline": "Desconectado",
+      "do_not_disturb": "No molestar",
+      "idle": "Ausente",
+      "unknown": "Desconocido",
+      "currently_in": "Actualmente en"
     },
   },
 };
