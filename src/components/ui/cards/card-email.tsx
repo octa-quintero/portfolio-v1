@@ -36,8 +36,6 @@ export default function CardEmail({
           className="w-full h-full object-contain opacity-100 transition-opacity duration-300 group-hover:opacity-0"
         />
       </div>
-
-      {/* Icono de Gmail con colores originales al hacer hover */}
       <div className="absolute w-36 h-36 flex items-center justify-center">
         <img
           src="/gmail.svg"
