@@ -27,7 +27,6 @@ export default function CardEmail({
 >
       <span className="absolute inset-0 bg-[#f1f3f4] opacity-0 transition-all duration-500 rounded-full scale-0 group-hover:scale-150 group-hover:opacity-80" />
 
-      {/* Icono blanco de Gmail */}
       <div className="absolute w-36 h-36 flex items-center justify-center">
         <img
           src="/gmailwhite.svg"
