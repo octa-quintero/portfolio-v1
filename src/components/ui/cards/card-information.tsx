@@ -43,9 +43,7 @@ export default function CardInformation({
         className="absolute inset-0 z-0 rounded-2xl overflow-hidden"
         style={{
           backgroundImage: `url('https://i.pinimg.com/originals/f5/95/bf/f595bf962e7231c2c42fd896d3eb9316.gif')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.03,
+          opacity: 0.08,
         }}
       ></div>
 
