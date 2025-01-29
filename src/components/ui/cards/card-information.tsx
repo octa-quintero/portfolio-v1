@@ -27,7 +27,7 @@ export default function CardInformation({
   rowStart = 1,
   rowSpan = 1,
 }: CardInformationInterface) {
-  const { t } = useTranslation(); // Inicializamos el hook de traducción
+  const { t } = useTranslation();
 
   const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`;
 
