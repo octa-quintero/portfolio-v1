@@ -49,9 +49,8 @@ export default function CardInformation({
 
 <div
   className="flex flex-col justify-end items-start w-1/2 h-full p-0 z-10 rounded-l-2xl"
-  style={{ fontFamily: 'MyFont' }} // Fuente predeterminada para todo el div
+  style={{ fontFamily: 'MyFont' }}
 >
-  {/* Aplicando la fuente 'MyFont' */}
   <p className="text-left text-3xl text-white font-italic m-0">
     {name ? t(name) : ''}
   </p>
