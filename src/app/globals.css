@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 
+@keyframes borderRotation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.border-gradient-animation {
+  position: absolute;
+  background: linear-gradient(500deg, #004cff, #4b0082, #8b00ff, #c006f4, #ffffff, #ec0a86, #8b00ff, #c006f4, #ffffff00, #004cff, #4b0082, #8b00ff, #c006f4, #ffffff, #ec0a86, #8b00ff, #c006f4, #ffffff00);
+  background-size: 700% 700%;
+  animation: borderRotation 10s linear infinite;
+  mask-composite: exclude;
+  -webkit-mask-composite: exclude;
+}
+
+.border-gradient-animation::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #181818; /* Color de fondo de la card */
+  border-radius: 0.6rem;
+}
+
+
 @font-face {
   font-family: 'MyFont';
   src: url('../assets/fonts/Arkhip_font.ttf') format('opentype');
