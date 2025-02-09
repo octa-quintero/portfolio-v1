@@ -2,17 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @keyframes borderRotation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 50% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { 
+    background-position: 0% 50%;
+  }
+  12.5% { 
+    background-position: 12.5% 50%; 
+    box-shadow: 0 0 10px #4b0082, 0 0 5px #4b0082;
+  }
+  25% { 
+    background-position: 25% 50%; 
+    box-shadow: 0 0 10px #8b00ff, 0 0 5px #8b00ff;
+  }
+  37.5% { 
+    background-position: 37.5% 50%; 
+    box-shadow: 0 0 10px #c006f4, 0 0 5px #c006f4;
+  }
+  50% { 
+    background-position: 50% 50%; 
+    box-shadow: 0 0 10px #ffffff, 0 0 5px #ffffff;
+  }
+  62.5% { 
+    background-position: 62.5% 50%; 
+    box-shadow: 0 0 10px #fc7b03, 0 0 5px #d3de0a;
+  }
+  75% { 
+    background-position: 75% 50%; 
+    box-shadow: 0 0 10px #8b00ff, 0 0 5px #8b00ff;
+  }
+  87.5% { 
+    background-position: 87.5% 50%; 
+    box-shadow: 0 0 10px #c006f4, 0 0 5px #c006f4;
+  }
+  100% { 
+    background-position: 100% 50%; 
+    box-shadow: 0 0 10px #ffffff00, 0 0 5px #ffffff00;
+  }
 }
 
 .border-gradient-animation {
   position: absolute;
-  background: linear-gradient(500deg, #004cff, #4b0082, #8b00ff, #c006f4, #ffffff, #ec0a86, #8b00ff, #c006f4, #ffffff00, #004cff, #4b0082, #8b00ff, #c006f4, #ffffff, #ec0a86, #8b00ff, #c006f4, #ffffff00);
-  background-size: 700% 700%;
+  background: linear-gradient(500deg, #df6d10, #4b0082, #8b00ff, #c006f4, #ffffff, #ec0a86, #8b00ff, #c006f4, #ffffff00, #004cff, #4b0082, #8b00ff, #c006f4, #ffffff, #ec0a86, #8b00ff, #c006f4, #df6d10);
+  background-size: 800% 800%; /* Aumento la escala para que la transición entre colores sea más suave */
   animation: borderRotation 10s linear infinite;
   mask-composite: exclude;
   -webkit-mask-composite: exclude;
@@ -25,6 +56,8 @@
   background: #181818; /* Color de fondo de la card */
   border-radius: 0.6rem;
 }
+
+
 
 
 @font-face {

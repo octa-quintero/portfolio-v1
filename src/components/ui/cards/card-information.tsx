@@ -37,7 +37,11 @@ export default function CardInformation({
       transition={{ duration: 1 }}
       className={`relative ${background} ${gridClasses} flex rounded-2xl transition w-full h-full z-50 p-10`}
     >
+      {/* Capa de borde animado */}
       <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
+
+      {/* Nueva capa de sombra animada */}
+      <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>
       
       <div
         className="absolute inset-0 z-0 rounded-2xl overflow-hidden"
