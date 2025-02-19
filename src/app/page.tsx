@@ -2,19 +2,19 @@ import "./globals.css";
 import { FaLinkedinIn, FaGithub, FaCode, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import Grid from "@/components/ui/container/container";
-import CardLinkedin from "@/components/ui/cards/card-linkedin";
-import CardText from "@/components/ui/cards/card-text";
-import CardInformation from "@/components/ui/cards/card-information";
-import ThemeCard from "@/components/ui/cards/card-theme";
-import CardDiscord from "@/components/ui/cards/card-discord";
-import SpotifyCard from "@/components/ui/cards/card-spotify";
-import CardTime from "@/components/ui/cards/card-time";
-import CardGitHub from "@/components/ui/cards/card-github";
-import CardProject from "@/components/ui/cards/card-project";
-import CardSkills from "@/components/ui/cards/card-skills";
-import CardEmail from "@/components/ui/cards/card-email";
-import CardWhatsApp from "@/components/ui/cards/whatsapp";
-import LanguageSwitch from "@/components/ui/cards/card-languaje";
+import CardLinkedin from "@/components/ui/cards-home/card-linkedin";
+import CardText from "@/components/ui/cards-home/card-text";
+import CardInformation from "@/components/ui/cards-home/card-information";
+import ThemeCard from "@/components/ui/cards-home/card-theme";
+import CardDiscord from "@/components/ui/cards-home/card-discord";
+import SpotifyCard from "@/components/ui/cards-home/card-spotify";
+import CardTime from "@/components/ui/cards-home/card-time";
+import CardGitHub from "@/components/ui/cards-home/card-github";
+import CardProject from "@/components/ui/cards-home/card-project";
+import CardSkills from "@/components/ui/cards-home/card-skills";
+import CardEmail from "@/components/ui/cards-home/card-email";
+import CardWhatsApp from "@/components/ui/cards-home/whatsapp";
+import LanguageSwitch from "@/components/ui/cards-home/card-languaje";
 
 
 export default function App() {
@@ -24,8 +24,8 @@ export default function App() {
       <CardInformation
   image="/logo.png"
   title="full_stack_developer" // Clave de traducción
-  name="octavio_quintero" // Clave de traducción
-  text="programador_texto" // Clave de traducción
+  name="octavio_quintero"
+  text="programador_texto"
   background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
   colStart={1}
   colSpan={3}
