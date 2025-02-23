@@ -35,7 +35,7 @@ export default function App() {
 
         <LanguageSwitch
           background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
-          colStart={4} // Comienza en la columna 1
+          colStart={4} 
           colSpan={1}
           rowStart={1}
           rowSpan={1}
