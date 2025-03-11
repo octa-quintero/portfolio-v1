@@ -6,21 +6,21 @@ interface GridProps {
   children: React.ReactNode; // Elementos dentro de la grilla
 }
 
-const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
-  return (
-    <section
-      className="grid gap-5 my-5 container mx-auto xl:px-20"
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        gridTemplateRows: `repeat(${rows}, 1fr)`,
-        width: "100%",
-        height: "auto",
-      }}
-    >
-        {children}
-    </section>
-  );
-};
+  const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
+    return (
+      <section
+        className="grid gap-5 container mx-auto"
+        style={{  
+          display: "grid",
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          gridTemplateRows: `repeat(${rows}, 1fr)`,
+          width: "100%",
+          height: "100%",
+        }}
+      >
+          {children}
+      </section>
+    );
+  };
 
-export default Grid;
+  export default Grid;

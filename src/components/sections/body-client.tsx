@@ -9,10 +9,12 @@ export default function BodyClient({ children }: Readonly<{
   const { darkMode } = useStore();
 
   return (
-    <body
-      className={`${darkMode ? "" : "bg-[#171717]"} m-[50px] transition-all duration-1000 ease-in-out`}
-    >
-      {children}
-    </body>
+<body
+className={`${darkMode ? "" : "bg-[#171717]"} min-h-screen w-full transition-all duration-1000 ease-in-out pt-10 px-40 pb-10`}
+
+>
+  {children}
+</body>
+
   );
 }
