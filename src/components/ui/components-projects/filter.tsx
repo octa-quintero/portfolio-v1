@@ -23,9 +23,8 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
       onClick={() => handleFilterClick(filter)}
       className={`px-4 py-2 rounded-lg text-white text-3xl font-bold transition-all duration-300 flex items-center ${
         activeFilter === filter ? "text-shadow-md" : ""
-      } hover:text-shadow-lg hover:text-white`} // Ilumina al pasar el mouse
+      } hover:text-shadow-lg hover:text-white`}
     >
-      {/* Agregar la estrella al costado del texto "RECOMENDADOS" */}
       {filter === "RECOMENDADOS" && <FaStar className="mr-0.5 text-yellow-500 text-xl" />}
       {filter}
     </button>
