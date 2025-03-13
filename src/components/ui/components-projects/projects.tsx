@@ -9,11 +9,15 @@ interface CardProjectProps {
   rowStart: number;
   colSpan: number;
   rowSpan: number;
+  title: string;
+  technologies: string[];
 }
 
 const CardProjects: React.FC<CardProjectProps> = ({
   description,
   image,
+  title,
+  technologies,
   colStart,
   rowStart,
   colSpan,
@@ -28,7 +32,7 @@ const CardProjects: React.FC<CardProjectProps> = ({
       }}
       whileHover="hover"
     >
-      {/* Imagen y Título */}
+      {/* Imagen y título */}
       <motion.div
         className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 text-center"
         initial={{ opacity: 1, filter: "blur(0px)" }}
@@ -42,20 +46,20 @@ const CardProjects: React.FC<CardProjectProps> = ({
           initial={{ scale: 1 }}
           variants={{
             hover: { 
-              scale: 1.5,  // Agranda la imagen al 150%
-              borderRadius: "30px", // Redondea los bordes
+              scale: 1.5,  
+              borderRadius: "30px",
               transition: { duration: 0.4, ease: "easeInOut" }
             },
           }}
         />
         <motion.h3
-          className="relative z-10 text-5xl font-bold"
+          className="relative z-10 text-2xl font-bold"
           initial={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
           variants={{
             hover: {
               opacity: 0,
               filter: "blur(10px)",
-              scale: 3, // Agranda el texto un 20%
+              scale: 3,
               transition: { duration: 0.4, ease: "easeInOut" },
             },
           }}
@@ -70,7 +74,15 @@ const CardProjects: React.FC<CardProjectProps> = ({
           hover: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
         }}
       >
-        <p className="text-lg">{description}</p>
+        <h3 className="text-xl font-semibold">{title}</h3>
+        <p className="text-lg mt-2">{description}</p>
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {technologies.map((tech, index) => (
+            <span key={index} className="text-sm bg-gray-700 px-2 py-1 rounded-md">
+              {tech}
+            </span>
+          ))}
+        </div>
       </motion.div>
     </motion.div>
   );
