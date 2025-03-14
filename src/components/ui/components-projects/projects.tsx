@@ -32,7 +32,6 @@ const CardProjects: React.FC<CardProjectProps> = ({
       }}
       whileHover="hover"
     >
-      {/* Imagen y título */}
       <motion.div
         className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 text-center"
         initial={{ opacity: 1, filter: "blur(0px)" }}
