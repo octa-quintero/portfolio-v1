@@ -65,8 +65,6 @@ const CardProjects: React.FC<CardProjectProps> = ({
         >
         </motion.h3>
       </motion.div>
-
-      {/* Detalles que aparecen al hacer hover */}
       <motion.div
         className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 p-4 opacity-0 text-center"
         variants={{
