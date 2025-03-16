@@ -2,6 +2,22 @@
 
 import { motion } from "framer-motion";
 
+const TechIcons = [
+  { src: '/typescript.svg', alt: 'TypeScript'},
+  { src: '/javascript.svg', alt: 'JavaScript'},
+  { src: '/nestjs.svg', alt: 'NestJS'},
+  { src: '/node.svg', alt: 'Node.js' },
+  { src: '/tailwindcss.svg', alt: 'Tailwind CSS'},
+  { src: '/reactjs.svg', alt: 'React' },
+  { src: '/postgresql.svg', alt: 'PostgreSQL'},
+  { src: '/nextjs.svg', alt: 'Next.js'},
+  { src: '/github.svg', alt: 'Git' },
+  { src: '/git.svg', alt: 'Git'},
+  { src: '/css.svg', alt: 'CSS'},
+  { src: '/html.svg', alt: 'HTML'},
+];
+
+
 interface CardProjectProps {
   description: string;
   image: string;
@@ -23,6 +39,7 @@ const CardProjects: React.FC<CardProjectProps> = ({
   colSpan,
   rowSpan,
 }) => {
+  const techIcons = TechIcons.filter(icon => technologies.includes(icon.alt));
   return (
     <motion.div
       className="relative overflow-hidden rounded-lg p-48 flex items-center justify-center text-white cursor-pointer"
@@ -74,12 +91,10 @@ const CardProjects: React.FC<CardProjectProps> = ({
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="text-lg mt-2">{description}</p>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {technologies.map((tech, index) => (
-            <span key={index} className="text-sm bg-gray-700 px-2 py-1 rounded-md">
-              {tech}
-            </span>
-          ))}
-        </div>
+            {techIcons.map((tech, index) => (
+              <img key={index} src={tech.src} alt={tech.alt} className="w-8 h-8" />
+            ))}
+          </div>
       </motion.div>
     </motion.div>
   );
