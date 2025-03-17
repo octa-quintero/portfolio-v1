@@ -29,7 +29,6 @@ export default function CardProject({
   return (
     <a
       href={link}
-      target="_blank"
       rel="noopener noreferrer"
       className={`text-white grid place-items-center relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
       style={{

@@ -66,7 +66,7 @@ export default function App() {
             rowSpan={1}
           />
 <CardProject
-  link="https://github.com/octavio-quintero"
+  link="/projects"
   Icon={<FaCode size={45} className="text-gray-900 group-hover:text-white transition-all duration-300" />} // Pasa el icono como JSX
   colStart={3}
   colSpan={2}

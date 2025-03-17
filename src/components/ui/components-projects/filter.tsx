@@ -8,7 +8,7 @@ interface FilterProps {
 
 const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
   const [activeFilter, setActiveFilter] = useState<string>("TODOS");
-  const filters = ["TODOS", "PERSONALES", "PASANTIAS", "RECOMENDADOS"];
+  const filters = ["TODOS", "PERSONALES", "EXPERIENCIAS", "RECOMENDADOS"];
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);

@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FaArrowLeft } from 'react-icons/fa'
+import { FaArrowLeft } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface NavbarInterface {
   image: string;
@@ -12,6 +13,7 @@ interface NavbarInterface {
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
+  projects: unknown[]; // Recibe los proyectos filtrados
 }
 
 export default function Navbar({
@@ -22,8 +24,11 @@ export default function Navbar({
   colSpan = 1,
   rowStart = 1,
   rowSpan = 1,
+  projects, // Recibe los proyectos filtrados
 }: NavbarInterface) {
   const { t } = useTranslation();
+
+  const projectCount = projects.length; // Contamos los proyectos
 
   const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`;
 
@@ -38,33 +43,30 @@ export default function Navbar({
 
       <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>
 
-      {/* Flecha */}
-
-      {/* Contenedor con los tres elementos y el justify-content */}
       <div className="flex w-full h-full p-10 z-10 justify-between items-center">
-  {/* Contenedor de la flecha y el título */}
-  <div className="flex items-center gap-12">
-    <div className="flex items-center cursor-pointer">
+        <div className="flex items-center gap-12">
+        <div className="flex items-center cursor-pointer">
+  <Link href="/">
     <FaArrowLeft className="w-14 h-14 text-white" style={{ strokeWidth: 0.5 }} />
-
-    </div>
-    <div className="flex flex-col justify-center items-start">
-      <p className="text-left text-7xl text-white font-semibold m-0">{t(title)}</p>
-    </div>
-  </div>
-
-  {/* Imagen a la derecha */}
-  <div
-    className="flex items-center justify-center w-36 h-36 rounded-2xl overflow-hidden"
-    style={{
-      backgroundImage: `url(${image})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }}
-  />
+  </Link>
 </div>
+          <div className="flex flex-col justify-center items-start">
+            <p className="text-left text-7xl text-white font-semibold m-0">
+              {t(title)} <span className="text-7xl text-zinc-400 opacity-40">{projectCount}</span>
+            </p>
+          </div>
+        </div>
 
+        <div
+          className="flex items-center justify-center w-36 h-36 rounded-2xl overflow-hidden"
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      </div>
 
       <div
         className="absolute inset-0 z-0 rounded-2xl overflow-hidden"

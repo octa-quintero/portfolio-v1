@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from "react";
 import Grid from "@/components/ui/container/container";
 import Navbar from "@/components/ui/components-projects/navbar";
@@ -7,44 +8,49 @@ import CardProject from "@/components/ui/components-projects/projects";
 
 const projects = [
   { 
-    id: 1, 
-    title: "Pixel Gaming", 
-    description: "Un sitio para compartir experiencias de juegos.", 
-    image: "/projects/pixel-gaming.png", 
-    category: ["RECOMENDADOS", "PERSONALES"], 
-    technologies: ["React", "Next.js", "Tailwind CSS"] 
-  },
-  { 
     id: 2, 
     title: "Crewland", 
-    description: "Plataforma de gestión de equipos de desarrollo.", 
+    description: "Crewland 🚀, una aplicación en la que tuve el rol de líder del equipo Backend. Durante semanas trabajamos para resolver los principales desafíos de asistir a festivales, desde encontrar compañía hasta gestionar el transporte y el alojamiento. Nuestra misión fue desarrollar una plataforma centralizada que conecte personas con intereses similares y simplifique toda la planificación.", 
     image: "/projects/crewland.png", 
-    category: ["PASANTIAS", "RECOMENDADOS"], 
-    technologies: ["Vue.js", "Firebase", "Node.js"] 
+    category: ["EXPERIENCIAS", "RECOMENDADOS"], 
+    technologies: ["TypeScript", "NestJS", "Next.js", "Tailwind CSS", "PostgreSQL"],
+    background: ["#3805A8", "#0F022B"],
   },
   { 
     id: 3, 
     title: "Event Map", 
-    description: "Aplicación para organizar y descubrir eventos.", 
+    description: "EventMap🚗, una app para conductores de Uber, Cabify y similares. Permite visualizar zonas con alta demanda en un mapa interactivo, filtrar eventos próximos y optimizar recorridos con Google Maps. También facilita la creación de eventos y notificaciones para maximizar ganancias y reducir gastos. ¡Un cambio de juego para la planificación de viajes!", 
     image: "/projects/event-map.png", 
-    category: ["PASANTIAS"], 
-    technologies: ["NestJS", "PostgreSQL", "Prisma"] 
+    category: ["EXPERIENCIAS"], 
+    technologies: ["TypeScript", "PostgreSQL", "NestJS", "Next.js"],
+    background: ["#13a87e", "#073d3d"],
+  },
+  { 
+    id: 1, 
+    title: "Pixel Gaming", 
+    description: "PixelGaming🌻 es un sitio para los amantes de los videojuegos, donde puedes gestionar tu colección, compartir experiencias y descubrir nuevos títulos. Ofrece búsqueda por nombre, filtrado por categorías, y herramientas para gestionar tu perfil y juegos. Con un panel de administración para mantener un entorno seguro, restauración de contraseñas mediante token y una sección Top2024 con los juegos más populares, todo con una interfaz visualmente atractiva y responsive. Además, permite a los usuarios dejar reseñas y opiniones sobre cada juego.", 
+    image: "/projects/pixel-gaming.png", 
+    category: ["RECOMENDADOS", "PERSONALES"], 
+    technologies: ["JavaScript", "Node.js", "React", "PostgreSQL"],
+    background: ["#a8a807", "#242402"],
   },
   { 
     id: 4, 
     title: "Talent Place", 
-    description: "Plataforma de contratación para freelancers.", 
+    description: "TalentPlace🚀 fue creada para conectar empresas, startups y desarrolladores IT juniors en una plataforma intuitiva y eficiente. Su objetivo es simplificar el proceso de búsqueda de talento, brindando a las empresas acceso rápido a profesionales en crecimiento y facilitando a los juniors oportunidades para ingresar al mundo laboral.", 
     image: "/projects/talent-place.png", 
-    category: ["PASANTIAS"], 
-    technologies: ["Next.js", "MongoDB", "TypeScript"] 
+    category: ["EXPERIENCIAS", "RECOMENDADOS"], 
+    technologies: ["Next.js", "Node.js", "TypeScript", "PostgreSQL"],
+    background: ["#0cafc4", "#0a2124"],
   },
   { 
     id: 5, 
     title: "Portfolio", 
-    description: "Mi portafolio personal para mostrar proyectos y habilidades.", 
+    description: "Este es mi portafolio personal, diseñado para mostrar mis proyectos y habilidades. Además, cuenta con integración a APIs como la de Discord y Spotify, para obtener información en tiempo real sobre mi estado y actividad. A través de estas conexiones, el portafolio ofrece una visión más dinámica y actualizada de mis intereses y trabajo.", 
     image: "/projects/portfolio.png", 
     category: ["PERSONALES"], 
-    technologies: ["Next.js", "Tailwind CSS", "Zustand"] 
+    technologies: ["TypeScript", "Next.js", "Tailwind CSS"],
+    background: ["#b90bd4", "#370140"],
   },
 ];
 
@@ -66,21 +72,21 @@ export default function Projects() {
           colSpan={1}
           rowStart={1}
           rowSpan={1}
+          projects={filteredProjects} // Pasamos los proyectos filtrados
         />
       </Grid>
 
-      {/* Filtro de proyectos */}
       <ProjectsFilter onFilterChange={setFilter} />
 
-      {/* Renderizado de proyectos en una grilla de 3x3 */}
-      <Grid columns={3} rows={3}>
+      <Grid columns={3} rows={1}>
         {filteredProjects.map((project, index) => (
           <CardProject
             key={project.id}
-            title={project.title}  // Ahora pasamos el título
+            title={project.title}
+            background={project.background}
             description={project.description}
             image={project.image}
-            technologies={project.technologies}  // Pasamos la lista de tecnologías
+            technologies={project.technologies} 
             colStart={(index % 3) + 1}
             colSpan={1}
             rowStart={Math.floor(index / 3) + 1}
