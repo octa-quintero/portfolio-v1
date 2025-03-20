@@ -13,6 +13,7 @@ interface CardInformationInterface {
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
+  className?: string;
 }
 
 export default function CardInformation({
@@ -25,47 +26,65 @@ export default function CardInformation({
   colSpan = 1,
   rowStart = 1,
   rowSpan = 1,
+  className,
 }: CardInformationInterface) {
   const { t } = useTranslation();
 
-  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`;
+  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} ${className}`;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      className={`relative ${background} ${gridClasses} flex rounded-2xl transition w-full h-full z-50 p-10`}
-    >
-      {/* Capa de borde animado */}
-      <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
+<motion.div
+  initial={{ opacity: 0, x: -100 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1 }}
+  className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 md:p-7 `}
+>
+  {/* Capa de borde animado */}
+  <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
 
-      {/* Nueva capa de sombra animada */}
-      <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>
-      
-      <div
-        className="absolute inset-0 z-0 rounded-2xl overflow-hidden"
-        style={{
-          backgroundImage: `url('https://i.pinimg.com/originals/f5/95/bf/f595bf962e7231c2c42fd896d3eb9316.gif')`,
-          opacity: 0.08,
-        }}
-      ></div>
-      
-      <div className="flex flex-col justify-end items-start w-1/2 h-full p-0 z-10 rounded-l-2xl" style={{ fontFamily: 'MyFont' }}>
-        <p className="text-left text-3xl text-white font-italic m-0">{name ? t(name) : ''}</p>
-        <p className="text-left text-5xl text-white font-semibold m-0" style={{ fontFamily: 'MyFont' }}>{t(title)}</p>
-        <p className="font-quicksand font-bold text-xl text-white" style={{ fontFamily: 'MyFont1' }}>{t(text)}</p>
-      </div>
+  {/* Nueva capa de sombra animada */}
+  <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>
 
-      <div
-        className="flex flex-col justify-start items-start w-1/2 h-full p-0 z-10 rounded-l-2xl"
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: '45%',
-          backgroundPosition: 'top right',
-          backgroundRepeat: 'no-repeat',
-        }}
-      ></div>
-    </motion.div>
+  {/* Fondo con opacidad */}
+  <div
+    className="absolute inset-0 z-0 rounded-2xl overflow-hidden"
+    style={{
+      backgroundImage: `url('https://i.pinimg.com/originals/f5/95/bf/f595bf962e7231c2c42fd896d3eb9316.gif')`,
+      opacity: 0.08,
+    }}
+  ></div>
+
+  {/* Sección de texto */}
+  <div
+  className="flex flex-col justify-end items-start w-full md:w-1/2 h-full p-3 md:p-3 z-10 rounded-l-2xl max-sm:w-full max-sm:h-full max-sm:items-left max-sm:justify-center max-sm:text-center"
+  style={{ fontFamily: 'MyFont' }}
+>
+  <p className="text-left text-xl md:text-3xl text-white font-italic m-0 max-sm:text-lg">{name ? t(name) : ''}</p>
+  <p
+    className="text-left text-3xl md:text-5xl text-white font-semibold m-0 max-sm:text-xl"
+    style={{ fontFamily: 'MyFont' }}
+  >
+    {t(title)}
+  </p>
+  <p
+    className="font-quicksand font-bold text-lg md:text-xl text-white max-sm:text-md max-sm:text-left"
+    style={{ fontFamily: 'MyFont1' }}
+  >
+    {t(text)}
+  </p>
+</div>
+
+  <div
+  className="flex flex-col justify-start items-start w-1/2 h-full p-0 z-10 rounded-l-2xl max-sm:hidden"
+  style={{
+    backgroundImage: `url(${image})`,
+    backgroundSize: '45%',
+    backgroundPosition: 'top right',
+    backgroundRepeat: 'no-repeat',
+  }}
+></div>
+
+</motion.div>
+
   );
 }

@@ -31,6 +31,7 @@ export default function App() {
   colSpan={3}
   rowStart={1}
   rowSpan={2}
+className="max-sm:col-start-1 max-sm:col-span-4 max-sm:row-start-1 max-sm:row-span-1"
 />
 
         <LanguageSwitch
@@ -39,13 +40,16 @@ export default function App() {
           colSpan={1}
           rowStart={1}
           rowSpan={1}
+className="max-sm:col-start-1 max-sm:col-span-2 max-sm:row-start-2 max-sm:row-span-1"
+
         />
         <ThemeCard
           background="bg-gradient-to-t from-[#1e2124] to-[#2f3136]"
           colStart={4}
           colSpan={1}
           rowStart={2}
-          rowSpan={1} titleKey={""} subtitleKey={""}        />
+          rowSpan={1} titleKey={""} subtitleKey={""} />
+          
 <CardText
   background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]"
   titleKey="age" // Usamos la clave de traducción

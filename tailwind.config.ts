@@ -17,6 +17,13 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+'max-sm': { max: '599px' },
+      },
+      gridTemplateColumns: {
+        // Agrega un 50% o 0.5 fracción en el grid
+        '1/2': '50%',
+      },
       animation: {
         "glowing-green": "glowing-green 1.5s ease-in-out infinite",
         "glowing-gray": "glowing-gray 1.5s ease-in-out infinite",

@@ -10,7 +10,7 @@ export default function BodyClient({ children }: Readonly<{
 
   return (
     <body
-      className={`${darkMode ? "" : "bg-[#171717]"} min-h-screen w-full transition-all duration-1000 ease-in-out pt-10 px-4 sm:px-10 md:px-20 lg:px-40 pb-10`}
+      className={`${darkMode ? "" : "bg-[#171717]"} min-h-full w-full transition-all duration-1000 ease-in-out pt-10 px-4 sm:px-10 md:px-20 lg:px-40 pb-10`}
       style={{
         display: 'flex',
         flexDirection: 'column',

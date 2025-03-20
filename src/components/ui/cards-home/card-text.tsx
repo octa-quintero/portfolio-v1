@@ -11,6 +11,7 @@ export interface CardTextInterface {
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
+  className?: string;
 }
 
 export default function CardText({
