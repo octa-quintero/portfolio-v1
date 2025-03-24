@@ -9,7 +9,6 @@ interface LanguageSwitchProps {
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
-  className?: string;
 }
 
 export default function LanguageSwitch({
@@ -18,7 +17,6 @@ export default function LanguageSwitch({
   colSpan = 1,
   rowStart = 1,
   rowSpan = 1,
-  className,
 }: LanguageSwitchProps) {
   const { language, changeLanguage } = useStore();
 
@@ -28,7 +26,7 @@ export default function LanguageSwitch({
 
   return (
     <div
-      className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-100 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} ${className} aspect-square`}
+      className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-100 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square`}
     >
       <label
         className="scale-150 relative inline-block h-8 w-16 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-[#0a0a0acc]"

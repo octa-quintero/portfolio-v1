@@ -13,7 +13,7 @@ interface CardInformationInterface {
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
-  className?: string;
+  className: string;
 }
 
 export default function CardInformation({
@@ -26,11 +26,10 @@ export default function CardInformation({
   colSpan = 1,
   rowStart = 1,
   rowSpan = 1,
-  className,
 }: CardInformationInterface) {
   const { t } = useTranslation();
 
-  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} ${className}`;
+  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`;
 
   return (
 <motion.div

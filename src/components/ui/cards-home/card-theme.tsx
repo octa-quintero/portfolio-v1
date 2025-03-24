@@ -9,13 +9,12 @@ export default function ThemeCard({
   colSpan = 1,
   rowStart = 1,
   rowSpan = 1,
-  className,
 }: CardTextInterface) {
   const { darkMode, toggleTheme } = useStore();
   
   return (
     <div
-      className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} ${className}`}
+      className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
     >
       <label
         className="scale-150 relative inline-block h-8 w-16 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-[#0a0a0acc]"
