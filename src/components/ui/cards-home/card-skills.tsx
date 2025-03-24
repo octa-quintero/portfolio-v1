@@ -32,7 +32,7 @@ export default function CardSkills({
 }: CardSkillsInterface) {
   return (
     <div
-      className={`${background} grid grid-cols-4 grid-rows-3 gap-2 outline-slate-50 relative rounded-2xl transition z-[-1] col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} p-4`}
+      className={`${background} grid grid-cols-4 grid-rows-3 gap-2 outline-slate-50 relative rounded-2xl transition z-[1] col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} p-4  aspect-square`}
     >
       {icons.map((icon, index) => (
         <div key={index} className="flex items-center justify-center">

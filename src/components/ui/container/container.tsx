@@ -9,11 +9,11 @@ interface GridProps {
 }
 
 const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null); // Inicializa como `null`
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Considera 768px como el límite entre móvil y escritorio
+      setIsMobile(window.innerWidth < 800); // Considera 768px como el límite entre móvil y escritorio
     };
 
     handleResize(); // Llama al tamaño inicial al cargar el componente
@@ -22,8 +22,11 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
     return () => window.removeEventListener("resize", handleResize); // Limpia el evento al desmontar el componente
   }, []);
 
+  // Renderiza solo cuando `isMobile` está definido (es decir, después del primer renderizado en cliente)
+  if (isMobile === null) return null;
+
   return (
-    <section className="container mx-auto">
+    <section className="w-full mx-auto">
       {/* Grilla Principal (Para pantallas grandes) */}
       {!isMobile && (
         <div
@@ -40,14 +43,18 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
       {/* Grilla Secundaria (Para pantallas pequeñas) */}
       {isMobile && (
         <div
-          className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-          style={{
-            gridTemplateColumns: "repeat(2, 1fr)", // Para pantallas pequeñas
-            gridTemplateRows: "repeat(6, 1fr)", // Ajuste de filas
-          }}
-        >
-          {children}
-        </div>
+  className="grid grid-cols-3 grid-rows-8 gap-4 auto-rows-[minmax(80px,_1fr)]"
+  style={{
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    gridTemplateRows: `repeat(${rows}, 1fr)`,
+    height: '100vh', // Asegura que el contenedor de la grilla ocupe el 100% del alto de la pantalla
+    overflow: 'hidden', // Evita que el contenido se desborde fuera de los márgenes
+    padding: '0 16px', // Para agregar un margen en los laterales, si es necesario
+  }}
+>
+  {children}
+</div>
+
       )}
     </section>
   );

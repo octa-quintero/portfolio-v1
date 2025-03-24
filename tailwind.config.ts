@@ -18,7 +18,7 @@ export default {
   theme: {
     extend: {
       screens: {
-'max-sm': { max: '599px' },
+'max-sm': { max: '1000px' },
       },
       gridTemplateColumns: {
         // Agrega un 50% o 0.5 fracción en el grid

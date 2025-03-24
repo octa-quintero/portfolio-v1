@@ -44,7 +44,7 @@ export default function CardDiscord({
   if (!data) {
     return (
       <div
-        className={`bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center rounded-2xl col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
+        className={`bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center rounded-2xl col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square`}
       >
         <p className="text-white">Loading...</p>
       </div>
@@ -71,7 +71,7 @@ export default function CardDiscord({
     <Link
       href={invitationLink}
       target="_blank"
-      className={`group bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} overflow-hidden`}
+      className={`group bg-gradient-to-t from-[#1e2124] to-[#2f3136] grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square overflow-hidden`}
     >
       <span className="absolute inset-0 bg-[#18191c] opacity-0 transition-all duration-500 rounded-full scale-0 group-hover:scale-150 group-hover:opacity-80 z-0" />
 

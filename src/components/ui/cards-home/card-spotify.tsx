@@ -66,8 +66,9 @@ export default function SpotifyCard({
     fetchCurrentTrack();
   }, []);
 
+
   // Definir clases de grid dinámicamente
-  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`;
+  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} max-w-full max-h-full overflow-hidden`;
 
   return (
     <motion.div
@@ -122,13 +123,15 @@ export default function SpotifyCard({
                   {t('listen_on_spotify')}  {/* Usamos la traducción aquí */}
                 </span>
                 <div className="relative w-20 h-10">
-                  <Image
-                    src={wave}
-                    alt="Visualización de onda de sonido"
-                    layout="fill"
-                    objectFit="contain"
-                    priority
-                  />
+                <Image
+  src={wave}
+  alt="Visualización de onda de sonido"
+  layout="intrinsic"  // Esto asegura que la imagen no se estire o deforme.
+  objectFit="contain"  // Esto mantiene la imagen dentro de sus límites sin deformarla.
+  className="max-w-full max-h-full" // Limita el tamaño máximo
+  priority
+/>
+
                 </div>
               </a>
             </div>

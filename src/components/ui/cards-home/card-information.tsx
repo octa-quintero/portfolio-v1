@@ -13,7 +13,6 @@ interface CardInformationInterface {
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
-  className: string;
 }
 
 export default function CardInformation({
@@ -36,7 +35,7 @@ export default function CardInformation({
   initial={{ opacity: 0, x: -100 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 1 }}
-  className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 md:p-7 `}
+  className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 md:p-7`}
 >
   {/* Capa de borde animado */}
   <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
