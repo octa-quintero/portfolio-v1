@@ -40,7 +40,6 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
         </div>
       )}
 
-      {/* Grilla Secundaria (Para pantallas pequeñas) */}
       {isMobile && (
         <div
   className="grid grid-cols-3 grid-rows-8 gap-4 auto-rows-[minmax(80px,_1fr)]"
