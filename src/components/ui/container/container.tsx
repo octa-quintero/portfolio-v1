@@ -17,7 +17,6 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
     };
 
     handleResize(); // Llama al tamaño inicial al cargar el componente
-    window.addEventListener("resize", handleResize); // Agrega el evento de cambio de tamaño
 
     return () => window.removeEventListener("resize", handleResize); // Limpia el evento al desmontar el componente
   }, []);
@@ -42,14 +41,15 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
 
       {isMobile && (
         <div
-  className="grid grid-cols-3 grid-rows-8 gap-4 auto-rows-[minmax(80px,_1fr)]"
-  style={{
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
-    gridTemplateRows: `repeat(${rows}, 1fr)`,
-    height: '100vh', // Asegura que el contenedor de la grilla ocupe el 100% del alto de la pantalla
-    overflow: 'hidden', // Evita que el contenido se desborde fuera de los márgenes
-    padding: '0 16px', // Para agregar un margen en los laterales, si es necesario
-  }}
+        className={`grid gap-5 grid-cols-${columns} grid-rows-${rows}`}
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+          gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+          gap: "1rem",
+        }}
+        
+        
 >
   {children}
 </div>
