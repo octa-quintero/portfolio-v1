@@ -63,37 +63,76 @@ export default function Projects() {
 
   return (
     <>
-      <Grid columns={1} rows={1}>
-        <Navbar
-          image="/pixel.gif"
-          title="PROJECTS"
-          background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
-          colStart={1}
-          colSpan={1}
-          rowStart={1}
-          rowSpan={1}
-          projects={filteredProjects} // Pasamos los proyectos filtrados
-        />
-      </Grid>
-
-      <ProjectsFilter onFilterChange={setFilter} />
-
-      <Grid columns={3} rows={1}>
-        {filteredProjects.map((project, index) => (
-          <CardProject
-            key={project.id}
-            title={project.title}
-            background={project.background}
-            description={project.description}
-            image={project.image}
-            technologies={project.technologies} 
-            colStart={(index % 3) + 1}
+      {/* Versión de escritorio */}
+      <div className="hidden sm:block">
+        <Grid columns={1} rows={1}>
+          <Navbar
+            image="/pixel.gif"
+            title="PROJECTS"
+            background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
+            colStart={1}
             colSpan={1}
-            rowStart={Math.floor(index / 3) + 1}
+            rowStart={1}
             rowSpan={1}
+            projects={filteredProjects} // Pasamos los proyectos filtrados
           />
-        ))}
-      </Grid>
+        </Grid>
+
+        <ProjectsFilter onFilterChange={setFilter} />
+
+        <Grid columns={3} rows={1}>
+          {filteredProjects.map((project, index) => (
+            <CardProject
+              key={project.id}
+              title={project.title}
+              background={project.background}
+              description={project.description}
+              image={project.image}
+              technologies={project.technologies}
+              colStart={(index % 3) + 1}
+              colSpan={1}
+              rowStart={Math.floor(index / 3) + 1}
+              rowSpan={1}
+            />
+          ))}
+        </Grid>
+      </div>
+
+      {/* Versión móvil */}
+      <div className="sm:hidden">
+        <Grid columns={1} rows={1}>
+          <Navbar
+            image="/pixel.gif"
+            title="PROJECTS"
+            background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
+            colStart={1}
+            colSpan={1}
+            rowStart={1}
+            rowSpan={1}
+            projects={filteredProjects} // Pasamos los proyectos filtrados
+          />
+        </Grid>
+
+        <ProjectsFilter onFilterChange={setFilter} />
+
+        {/* Ajustamos el Grid para mostrar los proyectos en una sola columna en dispositivos móviles */}
+        <Grid columns={1} rows={filteredProjects.length}>
+          {filteredProjects.map((project, index) => (
+            <CardProject
+              key={project.id}
+              title={project.title}
+              background={project.background}
+              description={project.description}
+              image={project.image}
+              technologies={project.technologies}
+              colStart={1}
+              colSpan={1}
+              rowStart={index + 1}
+              rowSpan={1}
+            />
+          ))}
+        </Grid>
+      </div>
     </>
   );
 }

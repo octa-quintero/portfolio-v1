@@ -21,7 +21,6 @@ export default {
 'max-sm': { max: '1000px' },
       },
       gridTemplateColumns: {
-        // Agrega un 50% o 0.5 fracción en el grid
         '1/2': '50%',
       },
       animation: {

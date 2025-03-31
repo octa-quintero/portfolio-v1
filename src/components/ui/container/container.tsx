@@ -25,12 +25,13 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
   if (isMobile === null) return null;
 
   return (
-    <section className="w-full mx-auto">
+    <section className="w-full">
       {/* Grilla Principal (Para pantallas grandes) */}
       {!isMobile && (
         <div
           className={`grid gap-5 grid-cols-${columns} grid-rows-${rows}`}
           style={{
+            display: "grid",
             gridTemplateColumns: `repeat(${columns}, 1fr)`,
             gridTemplateRows: `repeat(${rows}, 1fr)`,
           }}
