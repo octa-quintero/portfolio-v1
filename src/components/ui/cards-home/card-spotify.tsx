@@ -75,11 +75,10 @@ export default function SpotifyCard({
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
-      className={`${background} ${gridClasses} rounded-2xl shadow-lg flex flex-col items-center justify-between w-full h-full relative`}
+      className={`${background} ${gridClasses} rounded-2xl shadow-lg flex flex-col items-center w-full h-full relative z-0`}
     >
-      <div className="absolute inset-0 w-full h-full">
         <div
-          className="w-full h-full rounded-xl"
+          className="absolute inset-0 z-1"
           style={{
             backgroundImage: currentTrack?.albumArt
               ? `linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url(${currentTrack.albumArt})`
@@ -90,7 +89,6 @@ export default function SpotifyCard({
             opacity: 0.9,
           }}
         />
-      </div>
 
       <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4 group">
         {loading ? (
