@@ -1,18 +1,15 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
-      "cdn.discordapp.com",
-      "openweathermap.org",
-    ],
+    domains: ['cdn.discordapp.com', 'openweathermap.org'],
   },
   i18n: {
-    defaultLocale: "en", // El idioma por defecto
-    locales: ["en", "es"], // Los idiomas disponibles
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
     localeDetection: false,
   },
-  distDir: '.next', // Cambiado de 'build' a '.next'
+  distDir: '.next',
 };
 
 export default nextConfig;
