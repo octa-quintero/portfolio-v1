@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     locales: ["en", "es"], // Los idiomas disponibles
     localeDetection: false,
   },
+  distDir: '.next', // Cambiado de 'build' a '.next'
 };
 
 export default nextConfig;
