@@ -48,8 +48,6 @@ export default function App() {
         </Grid>
       </div>
 
-      {/* 📱 Versión Mobile */}
-{/* 📱 Versión Mobile */}
 <div className="sm:hidden">
   <Grid columns={3} rows={8}>
     <CardInformation 
