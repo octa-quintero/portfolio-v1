@@ -2,7 +2,7 @@
 
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import Link from "next/link"; // Importamos Link de Next.js
+import Link from "next/link";
 
 interface CardProjectProps {
   link: string;

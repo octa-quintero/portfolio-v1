@@ -21,10 +21,10 @@ export default function CardInformation({
   name,
   text,
   background,
-  colStart = 1,
-  colSpan = 1,
-  rowStart = 1,
-  rowSpan = 1,
+  colStart,
+  colSpan,
+  rowStart,
+  rowSpan,
 }: CardInformationInterface) {
   const { t } = useTranslation();
 
