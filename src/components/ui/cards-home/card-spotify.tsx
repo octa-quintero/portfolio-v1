@@ -68,7 +68,7 @@ export default function SpotifyCard({
 
 
   // Definir clases de grid dinámicamente
-  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} max-w-full max-h-full overflow-hidden`;
+  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} overflow-hidden w-full`;
 
   return (
     <motion.div
@@ -107,9 +107,9 @@ export default function SpotifyCard({
             </div>
 
             <div className="w-full h-full flex flex-col justify-end">
-              <h3 className="text-xl font-semibold mb-3">{t('recently_listened')}</h3>  {/* Usamos la traducción aquí */}
-              <h3 className="text-s font-semibold">{currentTrack.song}</h3>
-              <p className="text-ls">{currentTrack.artist}</p>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">{t('recently_listened')}</h3>  {/* Usamos la traducción aquí */}
+              <h3 className="text-sm md:text-lg font-semibold">{currentTrack.song}</h3>
+              <p className="text-xs md:text-sm">{currentTrack.artist}</p>
 
               <a
                 href={currentTrack.trackUrl || '#'}
@@ -117,19 +117,18 @@ export default function SpotifyCard({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-left flex-grow text-lg font-semibold hover:brightness-125 transition-all">
+                <span className="text-left flex-grow text-sm md:text-lg font-semibold hover:brightness-125 transition-all">
                   {t('listen_on_spotify')}  {/* Usamos la traducción aquí */}
                 </span>
-                <div className="relative w-20 h-10">
-                <Image
-  src={wave}
-  alt="Visualización de onda de sonido"
-  layout="intrinsic"  // Esto asegura que la imagen no se estire o deforme.
-  objectFit="contain"  // Esto mantiene la imagen dentro de sus límites sin deformarla.
-  className="max-w-full max-h-full" // Limita el tamaño máximo
-  priority
-/>
-
+                <div className="relative w-16 h-8 md:w-20 md:h-10">
+                  <Image
+                    src={wave}
+                    alt="Visualización de onda de sonido"
+                    layout="intrinsic"  // Esto asegura que la imagen no se estire o deforme.
+                    objectFit="contain"  // Esto mantiene la imagen dentro de sus límites sin deformarla.
+                    className="max-w-full max-h-full" // Limita el tamaño máximo
+                    priority
+                  />
                 </div>
               </a>
             </div>

@@ -15,10 +15,10 @@ interface CardGitHubProps {
 export default function CardGitHub({
   link,
   Icon, // Ahora pasamos un componente JSX
-  colStart = 1,
-  colSpan = 1,
-  rowStart = 1,
-  rowSpan = 1,
+  colStart,
+  colSpan,
+  rowStart,
+  rowSpan,
 }: CardGitHubProps) {
   const { t } = useTranslation(); // Hook de traducción
 
@@ -27,7 +27,7 @@ export default function CardGitHub({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`text-white grid place-items-center relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
+      className={`text-white grid place-items-center relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} w-full`}
       style={{
         backgroundImage: "url('/github.webp')",
         backgroundSize: "cover",
@@ -46,8 +46,8 @@ export default function CardGitHub({
 
         {/* Contenido principal */}
         <div className="flex flex-col items-start justify-end">
-          <h3 className="text-4xl font-semibold mb-1">{t("github")}</h3>
-          <h3 className="text-xl font-semibold">{t("github_description")}</h3>
+          <h3 className="text-xl md:text-3xl font-semibold mb-1">{t("github")}</h3>
+          <h3 className="text-sm md:text-xl font-semibold">{t("github_description")}</h3>
         </div>
       </div>
     </a>

@@ -5,10 +5,10 @@ import { useStore } from "@/zustand/store";
 
 export default function ThemeCard({
   background,
-  colStart = 1,
-  colSpan = 1,
-  rowStart = 1,
-  rowSpan = 1,
+  colStart,
+  colSpan,
+  rowStart,
+  rowSpan,
 }: CardTextInterface) {
   const { darkMode, toggleTheme } = useStore();
   

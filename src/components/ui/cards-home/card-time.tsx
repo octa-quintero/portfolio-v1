@@ -50,7 +50,7 @@ export default async function CardTime({
 
   return (
     <div
-      className={`${background} grid outline-slate-50 relative rounded-2xl transition col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
+      className={`${background} grid outline-slate-50 relative rounded-2xl transition col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} `}
     >
       {weather && (
         <section className="flex justify-between relative place-items-center">
