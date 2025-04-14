@@ -45,24 +45,14 @@ const Grid: React.FC<GridProps> = ({ columns, rows, children }) => {
       {/* Grilla Responsiva (Para pantallas pequeñas) */}
       {isMobile && (
         <div
-          className="grid"
-          style={{
-            gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`, // Asegura que las celdas se ajusten al tamaño disponible
-            gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`, // Lo mismo para las filas
-          }}
-        >
-          {React.Children.map(children, (child) => (
-            <div
-              style={{
-                aspectRatio: "1", // Las celdas serán cuadradas en dispositivos móviles
-                width: "100%", // Asegura que ocupe todo el espacio disponible en su celda
-                height: "100%", // Asegura que el elemento ocupe todo el alto de la celda
-              }}
-            >
-              {child}
-            </div>
-          ))}
-        </div>
+  className="grid gap-2 w-full"
+  style={{
+    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+  }}
+>
+  {children}
+</div>
+
       )}
     </section>
   );

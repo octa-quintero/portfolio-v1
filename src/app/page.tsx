@@ -56,7 +56,7 @@ export default function App() {
       name="octavio_quintero" 
       text="programador_texto" 
       background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]" 
-      colStart={1} colSpan={3} rowStart={1} rowSpan={2} 
+      colStart={1} colSpan={3} rowStart={1} rowSpan={1} 
     />
     <LanguageSwitch 
       background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]" 
@@ -113,7 +113,7 @@ export default function App() {
       subtitleKey="years_old" 
       colStart={3} colSpan={1} rowStart={3} rowSpan={1} 
     />
-    <CardTime 
+    <CardTime
       background="bg-gradient-to-t from-[#1e2124] to-[#2f3136]" 
       city="Milan" 
       colStart={1} colSpan={3} rowStart={8} rowSpan={1} 

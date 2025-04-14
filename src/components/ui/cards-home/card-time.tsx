@@ -54,7 +54,7 @@ export default async function CardTime({
     >
       {weather && (
         <section className="flex justify-between relative place-items-center">
-          <div className="flex flex-col items-start text-white w-full pl-10 pr-4">
+          <div className="flex flex-col items-start text-white pl-10 ">
             {/* Contenedor de grados e icono */}
             <div className="flex items-center">
               <h2 className="text-7xl font-semibold">{gradeCelsius(weather.main.temp)}°</h2>
@@ -62,7 +62,7 @@ export default async function CardTime({
               <img
                 src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}  // Usa el código del icono desde la API
                 alt="Weather icon"
-                className="w-20 h-20"  // Ajuste de tamaño y margen
+                className="w-50 h-20"  // Ajuste de tamaño y margen
               />
             </div>
 

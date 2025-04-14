@@ -28,7 +28,7 @@ export default function CardInformation({
 }: CardInformationInterface) {
   const { t } = useTranslation();
 
-  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`;
+  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} w-full max-w-full aspect-ratio`;
 
   return (
     <motion.div
