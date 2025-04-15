@@ -85,9 +85,9 @@ export default async function CardTime({
           </div>
 
           <div
-            className="relative h-full bg-cover bg-no-repeat bg-center rounded-2xl w-full"  // Añadido 'rounded-2xl' para aplicar los bordes redondeados
+            className="relative h-full bg-cover bg-no-repeat bg-center rounded-2xl w-full" 
             style={{
-              backgroundImage: `url(${backgroundImage})`,  // Cambia la imagen de fondo según el día o la noche
+              backgroundImage: `url(${backgroundImage})`, 
               backgroundPosition: 'center', // Centra la imagen
               backgroundSize: 'cover',  // Asegura que la imagen cubra completamente el contenedor
               WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
