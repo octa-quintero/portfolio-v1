@@ -3,6 +3,7 @@
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import React from "react";
 
 interface CardProjectProps {
   link: string;
@@ -43,18 +44,20 @@ export default function CardProject({
     >
       <div className="absolute inset-0 w-full h-full rounded-xl bg-gradient-to-t from-black to-transparent opacity-80" />
 
-      <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-6 group">
+      <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-6 max-sm:p-3 group">
         {/* Icono dinámico */}
-        <div className="absolute top-4 left-4 group-hover:scale-90 group-hover:shadow-xl transition-all duration-300">
+        <div className="absolute top-4 left-4 max-sm:top-2 max-sm:left-44 group-hover:scale-90 group-hover:shadow-xl transition-all duration-300">
           <div className="rounded-full bg-white p-1 shadow-md group-hover:bg-gray-900 group-hover:scale-125 transition-all duration-300">
-            {Icon} {/* Aquí renderizamos el icono pasado como JSX */}
+          {React.cloneElement(Icon, {
+  className: 'max-sm:w-6 max-sm:h-6 text-black group-hover:text-white transition-colors duration-300',
+})}
           </div>
         </div>
 
         {/* Contenido principal traducido */}
         <div className="flex flex-col items-start justify-end">
-          <h3 className="text-xl md:text-4xl font-semibold mb-1">{t(titleKey)}</h3>
-          <h3 className="text-sm md:text-xl font-semibold">{t(subtitleKey)}</h3>
+          <h3 className="text-5xl max-sm:text-xl font-semibold mb-1 max-sm:mb-0">{t(titleKey)}</h3>
+          <h3 className="text-3xl max-sm:text-sm font-semibold">{t(subtitleKey)}</h3>
         </div>
       </div>
     </Link>

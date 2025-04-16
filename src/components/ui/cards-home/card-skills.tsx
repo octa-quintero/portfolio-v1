@@ -30,15 +30,22 @@ export default function CardSkills({
   rowStart = 1,
   rowSpan = 1,
 }: CardSkillsInterface) {
-  return (
-    <div
-      className={`${background} grid grid-cols-4 grid-rows-3 gap-2 outline-slate-50 relative rounded-2xl transition z-[1] col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} p-4  aspect-square`}
-    >
-      {icons.map((icon, index) => (
-        <div key={index} className="flex items-center justify-center">
-          <Image src={icon.src} alt={icon.alt} width={60} height={60} />
-        </div>
-      ))}
-    </div>
-  );
+return (
+  <div
+    className={`${background} grid grid-cols-4 grid-rows-3 gap-2 outline-slate-50 relative rounded-2xl transition z-[1] col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} p-4 aspect-square max-sm:p-2.5 max-sm:gap-1`}
+  >
+    {icons.map((icon, index) => (
+      <div key={index} className="flex items-center justify-center">
+        <Image
+          src={icon.src}
+          alt={icon.alt}
+          width={60}
+          height={60}
+          className="max-sm:w-20 max-sm:h-20 !w-auto !h-auto"
+        />
+      </div>
+    ))}
+  </div>
+);
+
 }

@@ -69,7 +69,7 @@ export default function App() {
     />
     <CardSkills 
       background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]" 
-      colStart={3} colSpan={1} rowStart={5} rowSpan={1} 
+      colStart={3} colSpan={1} rowStart={3} rowSpan={1} 
     />
     <CardLinkedin 
       link="https://www.linkedin.com/" 
@@ -111,7 +111,7 @@ export default function App() {
       titleKey="age" 
       mainText="31" 
       subtitleKey="years_old" 
-      colStart={3} colSpan={1} rowStart={3} rowSpan={1} 
+      colStart={3} colSpan={1} rowStart={5} rowSpan={1} 
     />
     <CardTime
       background="bg-gradient-to-t from-[#1e2124] to-[#2f3136]" 
