@@ -90,35 +90,35 @@ export default function SpotifyCard({
           }}
         />
 
-      <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4 group">
+      <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4 max-sm:p-3 group">
         {loading ? (
           <p className="text-center text-gray-500">Cargando...</p>
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : currentTrack ? (
           <>
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 max-sm:top-2 max-sm:left-44 ">
               <div className="rounded-full group-hover:shadow-[0_0_15px_rgba(34,197,94,0.8)] group-hover:scale-110 transition-all duration-300">
                 <FaSpotify
                   size={50}
-                  className="text-green-500 group-hover:brightness-125"
+                  className="text-green-500 group-hover:brightness-125 max-sm:w-9 max-sm:h-8"
                 />
               </div>
             </div>
 
             <div className="w-full h-full flex flex-col justify-end">
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">{t('recently_listened')}</h3>  {/* Usamos la traducción aquí */}
-              <h3 className="text-sm md:text-lg font-semibold">{currentTrack.song}</h3>
-              <p className="text-xs md:text-sm">{currentTrack.artist}</p>
+              <h3 className="text-xl max-sm:text-sm font-semibold mb-3  max-sm:mb-2">{t('recently_listened')}</h3>  {/* Usamos la traducción aquí */}
+              <h3 className="text-sm  max-sm:text-xs font-semibold">{currentTrack.song}</h3>
+              <p className="text-xs  max-sm:text-sm">{currentTrack.artist}</p>
 
               <a
                 href={currentTrack.trackUrl || '#'}
-                className="text-green-500 flex items-center justify-around w-full"
+                className="text-green-500 flex items-center justify-around w-full" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-left flex-grow text-sm md:text-lg font-semibold hover:brightness-125 transition-all">
-                  {t('listen_on_spotify')}  {/* Usamos la traducción aquí */}
+                <span className="text-left max-sm:text-sm flex-grow text-sm md:text-lg font-semibold hover:brightness-125 transition-all">
+                  {t('listen_on_spotify')}
                 </span>
                 <div className="relative w-16 h-8 md:w-20 md:h-10">
                   <Image
