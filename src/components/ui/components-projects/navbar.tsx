@@ -37,27 +37,27 @@ export default function Navbar({
   initial={{ opacity: 0, x: -100 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 1 }}
-  className={`relative ${background} ${gridClasses} flex rounded-2xl transition w-full max-w-[100%] mx-auto h-60 z-60 overflow-hidden`}
+  className={`relative ${background} ${gridClasses} flex rounded-2xl transition w-full max-w-[100%] mx-auto h-60 z-60 overflow-hidden max-sm:h-36`}
 >
   <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
   <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>
 
-  <div className="flex w-full h-full p-10 z-10 justify-between items-center max-sm:p-10">
-    <div className="flex items-center gap-12 max-sm:gap-6">
+  <div className="flex w-full h-full p-10 z-10 justify-between items-center max-sm:p-5">
+    <div className="flex items-center gap-12 max-sm:gap-2">
       <div className="flex items-center cursor-pointer">
         <Link href="/">
-          <FaArrowLeft className="w-14 h-14 text-white max-sm:w-10 max-sm:h-10" style={{ strokeWidth: 0.5 }} />
+          <FaArrowLeft className="w-14 h-14 text-white max-sm:w-7 max-sm:h-7" style={{ strokeWidth: 0.5 }} />
         </Link>
       </div>
       <div className="flex flex-col justify-center items-start">
-        <p className="text-left text-7xl text-white font-semibold m-0 max-sm:text-5xl">
-          {t(title)} <span className="text-7xl text-zinc-400 opacity-40 max-sm:text-5xl">{projectCount}</span>
+        <p className="text-left text-7xl text-white font-semibold m-0 max-sm:text-3xl">
+          {t(title)} <span className="text-7xl text-zinc-400 opacity-40 max-sm:text-3xl">{projectCount}</span>
         </p>
       </div>
     </div>
 
     <div
-      className="flex items-center justify-center w-36 h-36 rounded-2xl overflow-hidden max-sm:w-24 max-sm:h-24"
+      className="flex items-center justify-center w-36 h-36 rounded-2xl overflow-hidden max-sm:w-16 max-sm:h-16"
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',

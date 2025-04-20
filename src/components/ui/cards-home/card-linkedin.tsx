@@ -27,7 +27,7 @@ export default function CardLinkedin({
 >
   <span className="absolute inset-0 bg-[#2f3cd3] opacity-0 transition-all duration-500 rounded-full scale-0 group-hover:scale-150 group-hover:opacity-80 overflow-hidden" />
   <FiExternalLink className="absolute top-4 right-4 text-2xl text-white max-sm:text-xl max-sm:top-3 max-sm:right-2" />
-  <Icon className="w-28 h-28 drop-shadow-2xl text-white transition-transform duration-300 max-sm:w-14" />
+  <Icon className="w-28 h-auto drop-shadow-2xl text-white transition-transform duration-300 max-sm:w-14" />
 </Link>
 
   );

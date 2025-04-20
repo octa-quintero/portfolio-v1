@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from "framer-motion";
@@ -127,7 +128,7 @@ const CardProjects: React.FC<CardProjectProps> = ({
             onClick={toggleModal} // Cierra el modal al hacer clic fuera
           >
             <div
-              className="rounded-lg p-8 max-w-3xl w-full bg-gradient-to-br from-zinc-700 from-zinc-1000 to-black"
+              className="rounded-lg p-8 max-w-3xl w-full bg-gradient-to-tl from-zinc-700 from-zinc-1000 to-black max-sm:max-h-[80vh] overflow-y-auto"
               style={{
                 border: "15px solid transparent", // Borde transparente
                 borderImage: `linear-gradient(to bottom right, ${background[0]}, ${background[1]}) 2`, // Gradiente en el borde

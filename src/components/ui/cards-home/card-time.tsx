@@ -49,53 +49,48 @@ export default async function CardTime({
   const backgroundImage = isDaytime ? '/sun.webp' : '/mon.webp';
 
   return (
-    <div
-      className={`${background} grid outline-slate-50 relative rounded-2xl transition col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} `}
-    >
-      {weather && (
-        <section className="flex justify-between relative place-items-center">
-          <div className="flex flex-col items-start text-white pl-10 ">
-            {/* Contenedor de grados e icono */}
-            <div className="flex items-center">
-              <h2 className="text-7xl font-semibold">{gradeCelsius(weather.main.temp)}°</h2>
-              {/* Icono al lado de los grados */}
-              <img
-                src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}  // Usa el código del icono desde la API
-                alt="Weather icon"
-                className="w-50 h-20"  // Ajuste de tamaño y margen
-              />
-            </div>
-
-            {/* Descripción del clima (nublado, despejado, etc.) */}
-            <p className="text-3xl font-medium capitalize">{weather.weather[0].description}</p>
-
-            {/* Hora con AM/PM */}
-            <p className="text-xl font-thin">
-              {new Date(weather.dt * 1000).toLocaleTimeString('es-ES', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: true,  // Habilita AM/PM
-              })}
-            </p>
-
-            {/* Ubicación */}
-            <h5 className="text-xl font-thin">
-              {weather.name}, {weather.sys.country}
-            </h5>
-          </div>
-
-          <div
-            className="relative h-full bg-cover bg-no-repeat bg-center rounded-2xl w-full" 
-            style={{
-              backgroundImage: `url(${backgroundImage})`, 
-              backgroundPosition: 'center', // Centra la imagen
-              backgroundSize: 'cover',  // Asegura que la imagen cubra completamente el contenedor
-              WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
-              maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
-            }}
+<div
+  className={`${background} grid outline-slate-50 relative rounded-2xl transition col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
+>
+  {weather && (
+    <section className="flex justify-between relative place-items-center max-sm:h-[109px]">
+      <div className="flex flex-col items-start text-white pl-10 max-sm:pl-5 max-sm:w-1/2">
+        {/* Contenedor de grados e icono */}
+        <div className="flex items-center">
+          <h2 className="text-7xl font-semibold max-sm:text-2xl">{gradeCelsius(weather.main.temp)}°</h2>
+          <img
+            src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+            alt="Weather icon"
+            className="w-50 h-20 max-sm:w-10 max-sm:h-auto"
           />
-        </section>
-      )}
-    </div>
+        </div>
+
+        <p className="text-3xl font-medium capitalize max-sm:text-sm">{weather.weather[0].description}</p>
+        <p className="text-xl font-thin max-sm:text-xs">
+          {new Date(weather.dt * 1000).toLocaleTimeString('es-ES', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true,
+          })}
+        </p>
+        <h5 className="text-xl font-thin max-sm:text-lg">
+          {weather.name}, {weather.sys.country}
+        </h5>
+      </div>
+
+      <div
+        className="relative h-full bg-cover bg-no-repeat bg-center rounded-2xl w-full max-sm:w-1/2"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
+          maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
+        }}
+      />
+    </section>
+  )}
+</div>
+
   );
 }
