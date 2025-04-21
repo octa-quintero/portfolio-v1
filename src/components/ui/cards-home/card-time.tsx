@@ -53,7 +53,7 @@ export default async function CardTime({
   className={`${background} grid outline-slate-50 relative rounded-2xl transition col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
 >
   {weather && (
-    <section className="flex justify-between relative place-items-center max-sm:h-[109px]">
+    <section className="flex justify-between relative place-items-center max-sm:h-[118px]">
       <div className="flex flex-col items-start text-white pl-10 max-sm:pl-5 max-sm:w-1/2">
         {/* Contenedor de grados e icono */}
         <div className="flex items-center">

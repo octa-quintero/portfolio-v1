@@ -49,8 +49,8 @@ export default function CardGitHub({
 
         {/* Contenido principal */}
         <div className="flex flex-col items-start justify-end">
-          <h3 className="text-xl max-sm:text-xl-3xl font-semibold mb-1 max-sm:mb-0">{t("github")}</h3>
-          <h3 className="text-sm max-sm:text-sm font-semibold">{t("github_description")}</h3>
+          <h3 className="text-5xl max-sm:text-xl font-semibold mb-1 max-sm:mb-0">{t("github")}</h3>
+          <h3 className="text-3xl max-sm:text-sm font-semibold">{t("github_description")}</h3>
         </div>
       </div>
     </a>

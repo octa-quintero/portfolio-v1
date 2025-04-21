@@ -92,9 +92,9 @@ export default function SpotifyCard({
 
       <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4 max-sm:p-3 group">
         {loading ? (
-          <p className="text-center text-gray-500">Cargando...</p>
+          <p className="text-center text-black-500">Cargando...</p>
         ) : error ? (
-          <p className="text-center text-red-500">{error}</p>
+          <p className="text-center text-black-500">{error}</p>
         ) : currentTrack ? (
           <>
             <div className="absolute top-4 left-4 max-sm:top-2 max-sm:left-44 ">
@@ -107,9 +107,9 @@ export default function SpotifyCard({
             </div>
 
             <div className="w-full h-full flex flex-col justify-end">
-              <h3 className="text-xl max-sm:text-sm font-semibold mb-3  max-sm:mb-2">{t('recently_listened')}</h3>  {/* Usamos la traducción aquí */}
-              <h3 className="text-sm  max-sm:text-xs font-semibold">{currentTrack.song}</h3>
-              <p className="text-xs  max-sm:text-sm">{currentTrack.artist}</p>
+              <h3 className="text-2xl max-sm:text-sm font-semibold mb-3  max-sm:mb-0">{t('recently_listened')}</h3>  {/* Usamos la traducción aquí */}
+              <h3 className="text-xl  max-sm:text-xs font-semibold">{currentTrack.song}</h3>
+              <p className="text-1xl  max-sm:text-sm">{currentTrack.artist}</p>
 
               <a
                 href={currentTrack.trackUrl || '#'}
@@ -120,13 +120,13 @@ export default function SpotifyCard({
                 <span className="text-left max-sm:text-sm flex-grow text-sm md:text-lg font-semibold hover:brightness-125 transition-all">
                   {t('listen_on_spotify')}
                 </span>
-                <div className="relative w-16 h-8 md:w-20 md:h-10">
+                <div className="relative w-20 h-15">
                   <Image
                     src={wave}
                     alt="Visualización de onda de sonido"
-                    layout="intrinsic"  // Esto asegura que la imagen no se estire o deforme.
-                    objectFit="contain"  // Esto mantiene la imagen dentro de sus límites sin deformarla.
-                    className="max-w-full max-h-full" // Limita el tamaño máximo
+                    layout="intrinsic"
+                    objectFit="contain" 
+                    className="max-w-full max-h-full"
                     priority
                   />
                 </div>
