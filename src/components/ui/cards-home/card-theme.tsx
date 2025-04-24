@@ -27,7 +27,7 @@ export default function ThemeCard({
           onChange={() => toggleTheme()}
         />
         <span
-          className="absolute inset-y-0 start-0 m-1 size-6 max-sm:size-7 max-sm:w-7 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-10 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"
+          className="absolute inset-y-0 start-0 m-1 size-6 max-sm:h-7 max-sm:w-7 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-10 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"
         ></span>
       </label>
     </div>
