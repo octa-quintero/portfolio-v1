@@ -34,6 +34,15 @@ export default function SpotifyCard({
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  const defaultTrack = {
+  song: 'Jugo',
+  artist: 'Los Espíritus',
+  albumArt: 'https://i.scdn.co/image/ab67616d0000b2732ccaa2ad26588fdc1b653c60',
+  trackUrl: 'https://open.spotify.com/track/0PJPcduHwXP4NUp2rd6Kk7',
+};
+
+  
+
   useEffect(() => {
     const fetchCurrentTrack = async () => {
       setLoading(true);
@@ -53,7 +62,7 @@ export default function SpotifyCard({
             trackUrl: `https://open.spotify.com/track/${spotify.track_id}`,
           });
         } else {
-          setCurrentTrack(null);
+          setCurrentTrack(defaultTrack);
         }
       } catch (err) {
         setError('Hubo un error al obtener los datos de Spotify.');
@@ -90,7 +99,7 @@ export default function SpotifyCard({
           }}
         />
 
-      <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4 max-sm:p-3 group">
+      <div className="absolute inset-0 flex flex-col items-start justify-end text-white p-4 max-sm:p-2 group">
         {loading ? (
           <p className="text-center text-black-500">Cargando...</p>
         ) : error ? (
@@ -120,7 +129,7 @@ export default function SpotifyCard({
                 <span className="text-left max-sm:text-sm flex-grow text-sm md:text-lg font-semibold hover:brightness-125 transition-all">
                   {t('listen_on_spotify')}
                 </span>
-                <div className="relative w-20 h-15">
+                <div className="relative w-32 max-sm:w-12">
                   <Image
                     src={wave}
                     alt="Visualización de onda de sonido"
