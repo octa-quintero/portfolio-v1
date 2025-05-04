@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     domains: ['cdn.discordapp.com', 'openweathermap.org'],
   },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'es',
     locales: ['en', 'es'],
     localeDetection: false,
   },
