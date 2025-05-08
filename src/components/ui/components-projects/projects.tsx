@@ -50,55 +50,58 @@ const CardProjects: React.FC<CardProjectProps> = ({
   };
 
   return (
+    <>
       <motion.div
         className="relative overflow-hidden w-full h-full rounded-lg min-h-[400px] justify-center text-white cursor-pointer"
         style={{
           gridColumn: `${colStart} / span ${colSpan}`,
           gridRow: `${rowStart} / span ${rowSpan}`,
         }}
+        onClick={toggleModal}
+        initial={{ opacity: 0, y: 30, filter: "blur(15px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         whileHover="hover"
-        onClick={toggleModal} // Abre el modal al hacer clic
       >
         <motion.div
           className="absolute inset-0 flex flex-col items-center justify-center text-center"
           initial={{ opacity: 1, filter: "blur(0px)" }}
-          variants={{
-            hover: { opacity: 0, filter: "blur(15px)", transition: { duration: 0.4, ease: "easeInOut" } },
+          whileHover={{
+            opacity: 0,
+            filter: "blur(15px)",
+            transition: { duration: 0.4, ease: "easeInOut" },
           }}
         >
           <motion.img
             src={image}
             className="w-full h-full object-cover absolute inset-0 z-0"
             initial={{ scale: 1 }}
-            variants={{
-              hover: { 
-                scale: 1.5,  
-                borderRadius: "30px",
-                transition: { duration: 0.4, ease: "easeInOut" }
-              },
+            whileHover={{
+              scale: 1.5,
+              borderRadius: "30px",
+              transition: { duration: 0.4, ease: "easeInOut" },
             }}
           />
           <motion.h3
             className="relative z-10 text-2xl font-bold"
             initial={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-            variants={{
-              hover: {
-                opacity: 0,
-                filter: "blur(10px)",
-                scale: 3,
-                transition: { duration: 0.4, ease: "easeInOut" },
-              },
+            whileHover={{
+              opacity: 0,
+              filter: "blur(10px)",
+              scale: 3,
+              transition: { duration: 0.4, ease: "easeInOut" },
             }}
-          >
-          </motion.h3>
+          />
         </motion.div>
+  
         <motion.div
           className="absolute inset-0 flex flex-col justify-between items-start pt-8 pb-8 pl-5 pr-5 opacity-0 text-left"
           style={{
-            background: `linear-gradient(to bottom right, ${background[0]}, ${background[1]})`, // Fondo personalizado en el modal
+            background: `linear-gradient(to bottom right, ${background[0]}, ${background[1]})`,
           }}
-          variants={{
-            hover: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },  
+          whileHover={{
+            opacity: 1,
+            transition: { duration: 1, ease: "easeInOut" },
           }}
         >
           <div className="flex flex-col justify-between gap-3">
@@ -107,8 +110,7 @@ const CardProjects: React.FC<CardProjectProps> = ({
               {description}
             </p>
           </div>
-
-          {/* Sección de tecnologías abajo a la izquierda */}
+  
           <div className="flex flex-wrap gap-2 mt-4">
             {techIcons.map((tech, index) => (
               <motion.div key={index} className="relative w-12 h-12">
@@ -121,54 +123,51 @@ const CardProjects: React.FC<CardProjectProps> = ({
             ))}
           </div>
         </motion.div>
-
-        {isModalOpen && (
+      </motion.div>
+  
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center z-50"
+          onClick={toggleModal}
+        >
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center z-50"
-            onClick={toggleModal} // Cierra el modal al hacer clic fuera
+            className="rounded-lg p-8 max-w-3xl w-full bg-gradient-to-tl from-zinc-700 from-zinc-1000 to-black max-sm:max-h-[80vh] overflow-y-auto"
+            style={{
+              border: "15px solid transparent",
+              borderImage: `linear-gradient(to bottom right, ${background[0]}, ${background[1]}) 2`,
+              boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
+              position: "relative",
+              borderRadius: "30px",
+            }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className="rounded-lg p-8 max-w-3xl w-full bg-gradient-to-tl from-zinc-700 from-zinc-1000 to-black max-sm:max-h-[80vh] overflow-y-auto"
-              style={{
-                border: "15px solid transparent", // Borde transparente
-                borderImage: `linear-gradient(to bottom right, ${background[0]}, ${background[1]}) 2`, // Gradiente en el borde
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)", // Sombra
-                position: 'relative',
-                borderRadius: '30px'
-              }}
-              onClick={(e) => e.stopPropagation()} // Previene el cierre al hacer clic dentro del modal
-            >
-              {/* Contenedor con el título y la X */}
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-3xl font-medium text-left ">{title}</h2>
-                <button
-                  className="text-3xl font-bold text-white"
-                  onClick={toggleModal} // Cierra el modal al hacer clic en la X
-                >
-                  X
-                </button>
-              </div>
-
-              {/* Descripción alineada a la izquierda */}
-              <p className="text-xl text-left mb-4">{description}</p>
-
-              {/* Sección de tecnologías */}
-              <div className="flex flex-wrap justify-center gap-4">
-                {techIcons.map((tech, index) => (
-                  <div key={index} className="relative w-16 h-16">
-                    <img
-                      src={tech.src}
-                      alt={tech.alt}
-                      className="absolute inset-0 w-full h-full object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-3xl font-medium text-left  text-white">{title}</h2>
+              <button
+                className="text-3xl font-bold text-white"
+                onClick={toggleModal}
+              >
+                X
+              </button>
+            </div>
+  
+            <p className="text-xl text-left mb-4 text-white">{description}</p>
+  
+            <div className="flex flex-wrap justify-center gap-4">
+              {techIcons.map((tech, index) => (
+                <div key={index} className="relative w-16 h-16">
+                  <img
+                    src={tech.src}
+                    alt={tech.alt}
+                    className="absolute inset-0 w-full h-full object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
-        )}
-      </motion.div>
+        </div>
+      )}
+    </>
   );
-};
-
+}
 export default CardProjects;

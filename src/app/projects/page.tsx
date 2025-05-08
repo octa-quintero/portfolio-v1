@@ -83,7 +83,7 @@ export default function Projects() {
         <Grid columns={3} rows={1}>
           {filteredProjects.map((project, index) => (
             <CardProject
-              key={project.id}
+              key={`${project.id}-${filter}`}
               title={project.title}
               background={project.background}
               description={project.description}
@@ -119,7 +119,7 @@ export default function Projects() {
         <Grid columns={1} rows={filteredProjects.length}>
           {filteredProjects.map((project, index) => (
             <CardProject
-              key={project.id}
+              key={`${project.id}-${filter}`}
               title={project.title}
               background={project.background}
               description={project.description}
