@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -15,8 +16,11 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
   };
 
   return (
-<div className="container mx-auto flex flex-wrap justify-between py-4 rounded-xl mt-5 mb-5 w-full max-w-1xl">
-  <div className="w-full bg-black/10  backdrop-blur-sm p-2 rounded-xl flex flex-wrap justify-between gap-1.5">
+<motion.div className="container mx-auto flex flex-wrap justify-between py-4 rounded-xl mt-5 mb-5 w-full max-w-1xl"
+        initial={{ opacity: 0, filter: "blur(40px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}>
+  <div className="w-full bg-black/50  backdrop-blur-sm p-1 rounded-xl flex flex-wrap justify-between gap-1.5">
     {filters.map((filter) => (
       <button
         key={filter}
@@ -32,7 +36,7 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
       </button>
     ))}
   </div>
-</div>
+</motion.div>
 
   );
 };

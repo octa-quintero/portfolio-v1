@@ -34,9 +34,9 @@ export default function Navbar({
 
   return (
 <motion.div
-  initial={{ opacity: 0, x: -100 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1 }}
+        initial={{ opacity: 0, y: -80, filter: "blur(30px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
   className={`relative ${background} ${gridClasses} flex rounded-2xl transition w-full max-w-[100%] mx-auto h-60 z-60 overflow-hidden max-sm:h-36`}
 >
   <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>

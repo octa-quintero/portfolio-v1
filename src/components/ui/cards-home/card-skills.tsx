@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export interface CardSkillsInterface {
@@ -31,8 +34,11 @@ export default function CardSkills({
   rowSpan = 1,
 }: CardSkillsInterface) {
 return (
-  <div
+  <motion.div
     className={`${background} grid grid-cols-4 grid-rows-3 gap-2 outline-slate-50 relative rounded-2xl transition z-[1] col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} p-4 aspect-square max-sm:p-2.5 max-sm:gap-1`}
+                    initial={{ opacity: 0, x: 80, filter: "blur(30px)" }}
+        animate={{ opacity: 1, x:0 , filter: "blur(0px)" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
   >
     {icons.map((icon, index) => (
       <div key={index} className="flex items-center justify-center">
@@ -45,7 +51,7 @@ return (
         />
       </div>
     ))}
-  </div>
+  </motion.div>
 );
 
 }

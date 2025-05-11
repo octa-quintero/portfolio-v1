@@ -2,7 +2,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { t } from "i18next";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 const TechIcons = [
   { src: '/typescript.svg', alt: 'TypeScript' },
@@ -29,6 +31,7 @@ interface CardProjectProps {
   title: string;
   technologies: string[];
   background: string[]; // Colores de fondo personalizados
+  github: string;
 }
 
 const CardProjects: React.FC<CardProjectProps> = ({
@@ -40,7 +43,8 @@ const CardProjects: React.FC<CardProjectProps> = ({
   rowStart,
   colSpan,
   rowSpan,
-  background, // Nuevos colores para el fondo
+  background,
+  github,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const techIcons = TechIcons.filter(icon => technologies.includes(icon.alt));
@@ -58,7 +62,7 @@ const CardProjects: React.FC<CardProjectProps> = ({
           gridRow: `${rowStart} / span ${rowSpan}`,
         }}
         onClick={toggleModal}
-        initial={{ opacity: 0, y: 30, filter: "blur(15px)" }}
+        initial={{ opacity: 0, y: 100, filter: "blur(40px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         whileHover="hover"
@@ -107,7 +111,7 @@ const CardProjects: React.FC<CardProjectProps> = ({
           <div className="flex flex-col justify-between gap-3">
             <h3 className="text-3xl font-medium">{title}</h3>
             <p className="text-xl font-medium overflow-hidden max-h-58 text-ellipsis whitespace-normal line-clamp-6">
-              {description}
+              {t(description)}
             </p>
           </div>
   
@@ -151,7 +155,9 @@ const CardProjects: React.FC<CardProjectProps> = ({
               </button>
             </div>
   
-            <p className="text-xl text-left mb-4 text-white">{description}</p>
+<p className="text-xl text-left mb-4 text-white">
+  {t(description)} {/* ← Traduce usando la clave que le pasaste */}
+</p>
   
             <div className="flex flex-wrap justify-center gap-4">
               {techIcons.map((tech, index) => (
@@ -164,6 +170,17 @@ const CardProjects: React.FC<CardProjectProps> = ({
                 </div>
               ))}
             </div>
+            <div className="flex justify-center mt-6">
+  <a
+    href={github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 text-white hover:text-gray-300 transition"
+  >
+    <FaGithub className="text-2xl" />
+    <span className="text-  lg font-medium">Ver en GitHub</span>
+  </a>
+</div>
           </div>
         </div>
       )}

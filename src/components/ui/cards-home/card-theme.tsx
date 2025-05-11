@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from "framer-motion";
 import { CardTextInterface } from "./card-text";
 import { useStore } from "@/zustand/store";
 
@@ -13,7 +14,10 @@ export default function ThemeCard({
   const { darkMode, toggleTheme } = useStore();
   
   return (
-    <div
+    <motion.div
+                initial={{ opacity: 0, x: 80, filter: "blur(30px)" }}
+        animate={{ opacity: 1, x:0 , filter: "blur(0px)" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square`}
     >
       <label
@@ -30,6 +34,6 @@ export default function ThemeCard({
           className="absolute inset-y-0 start-0 m-1 size-6 max-sm:h-7 max-sm:w-7 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-10 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"
         ></span>
       </label>
-    </div>
+    </motion.div>
   );  
 }

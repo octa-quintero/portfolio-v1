@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "octa-quintero",
   description: "portfolio",
   icons: {
-    icon: "/next.svg",
+    icon: "/favicon.ico.ico",
   },
 };
 

@@ -32,9 +32,9 @@ export default function CardInformation({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, y: -80 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
       className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 md:p-7`}
     >
       {/* Capa de borde animado */}

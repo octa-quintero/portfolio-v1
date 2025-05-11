@@ -1,6 +1,7 @@
 'use client';
 
 import { useStore } from '@/zustand/store';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 interface LanguageSwitchProps {
@@ -25,7 +26,10 @@ export default function LanguageSwitch({
   };
 
   return (
-    <div
+    <motion.div
+            initial={{ opacity: 0, x: -30, filter: "blur(30px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-100 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square`}
     >
       <label
@@ -69,7 +73,7 @@ export default function LanguageSwitch({
           />
         </span>
       </label>
-    </div>
+    </motion.div>
   );
   
 }
