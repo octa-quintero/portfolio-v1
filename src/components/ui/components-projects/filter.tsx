@@ -20,17 +20,17 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
         initial={{ opacity: 0, filter: "blur(40px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeOut" }}>
-  <div className="w-full bg-black/50  backdrop-blur-sm p-1 rounded-xl flex flex-wrap justify-between gap-1.5">
+  <div className="w-full bg-black/25  backdrop-blur-sm p-1 rounded-xl flex flex-wrap justify-between gap-1.5 max-sm:p-0">
     {filters.map((filter) => (
       <button
         key={filter}
         onClick={() => handleFilterClick(filter)}
         className={`px-1 py-2 rounded-lg text-white text-xl font-bold transition-all duration-300 flex items-center 
           ${activeFilter === filter ? "text-shadow-md" : ""} hover:text-shadow-lg hover:text-white 
-          max-sm:text-xs max-sm:px-1 max-sm:py-1`}
+          max-sm:text-xs max-sm:px-0 max-sm:py-3 max-sm:gap-0.2`}
       >
         {filter === "RECOMENDADOS" && (
-          <FaStar className="mr-1 text-yellow-500 text-xl max-sm:text-sm" />
+          <FaStar className="mr-0.1 text-yellow-500 text-xl max-sm:text-sm" />
         )}
         {filter}
       </button>

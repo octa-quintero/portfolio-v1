@@ -81,9 +81,9 @@ export default function SpotifyCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, x: 100, filter: "blur(30px)" }}
+      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${background} ${gridClasses} rounded-2xl shadow-lg flex flex-col items-center w-full h-full relative z-0`}
     >
         <div

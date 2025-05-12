@@ -32,18 +32,14 @@ export default function CardInformation({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -80 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: -80, filter: "blur(30px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.4 }}
       className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 md:p-7`}
     >
-      {/* Capa de borde animado */}
       <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
-
-      {/* Nueva capa de sombra animada */}
       <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>
 
-      {/* Fondo con opacidad */}
       <div
         className="flex absolute inset-0 z-0 rounded-2xl overflow-hidden"
         style={{

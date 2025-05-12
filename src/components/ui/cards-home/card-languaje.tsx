@@ -27,9 +27,9 @@ export default function LanguageSwitch({
 
   return (
     <motion.div
-            initial={{ opacity: 0, x: -30, filter: "blur(30px)" }}
+            initial={{ opacity: 0, x: -100, filter: "blur(30px)" }}
         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-100 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square`}
     >
       <label
