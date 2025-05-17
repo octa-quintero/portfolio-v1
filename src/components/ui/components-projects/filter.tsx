@@ -20,7 +20,7 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
         initial={{ opacity: 0, filter: "blur(40px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeOut" }}>
-  <div className="w-full bg-black/35  backdrop-blur-sm rounded-xl flex flex-wrap justify-between gap-1.5 max-sm:px-1.5">
+  <div className="w-full bg-black/35  backdrop-blur-sm rounded-xl flex flex-wrap justify-between gap-1.5 max-sm:px-1.5 px-20">
     {filters.map((filter) => (
       <button
         key={filter}

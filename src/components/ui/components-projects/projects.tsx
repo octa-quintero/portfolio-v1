@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { t } from "i18next";
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -128,62 +128,72 @@ const CardProjects: React.FC<CardProjectProps> = ({
           </div>
         </motion.div>
       </motion.div>
-  
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center z-50"
-          onClick={toggleModal}
-        >
-          <div
-            className="rounded-lg p-8 max-w-3xl w-full bg-gradient-to-tl from-zinc-700 from-zinc-1000 to-black max-sm:max-h-[80vh] overflow-y-auto"
-            style={{
-              border: "15px solid transparent",
-              borderImage: `linear-gradient(to bottom right, ${background[0]}, ${background[1]}) 2`,
-              boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
-              position: "relative",
-              borderRadius: "30px",
-            }}
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            key="modal-bg"
+            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center z-50"
+            onClick={toggleModal}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-3xl font-medium text-left  text-white">{title}</h2>
-              <button
-                className="text-3xl font-bold text-white"
-                onClick={toggleModal}
-              >
-                X
-              </button>
-            </div>
-  
-<p className="text-xl text-left mb-4 text-white">
-  {t(description)} {/* ← Traduce usando la clave que le pasaste */}
-</p>
-  
-            <div className="flex flex-wrap justify-center gap-4">
-              {techIcons.map((tech, index) => (
-                <div key={index} className="relative w-16 h-16">
-                  <img
-                    src={tech.src}
-                    alt={tech.alt}
-                    className="absolute inset-0 w-full h-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-center mt-6">
-  <a
-    href={github}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center gap-2 text-white hover:text-gray-300 transition"
-  >
-    <FaGithub className="text-2xl" />
-    <span className="text-  lg font-medium">Ver en GitHub</span>
-  </a>
-</div>
-          </div>
-        </div>
-      )}
+            <motion.div
+              className="rounded-lg p-8 max-w-3xl w-full bg-gradient-to-tl from-zinc-700 from-zinc-1000 to-black max-sm:max-h-[80vh] overflow-y-auto"
+              style={{
+                border: "15px solid transparent",
+                borderImage: `linear-gradient(to bottom right, ${background[0]}, ${background[1]}) 2`,
+                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
+                position: "relative",
+                borderRadius: "30px",
+              }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-3xl font-medium text-left text-white">{title}</h2>
+                <button
+                  className="text-3xl font-bold text-white"
+                  onClick={toggleModal}
+                >
+                  X
+                </button>
+              </div>
+
+              <p className="text-xl text-left mb-4 text-white">
+                {t(description)}
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                {techIcons.map((tech, index) => (
+                  <div key={index} className="relative w-16 h-16">
+                    <img
+                      src={tech.src}
+                      alt={tech.alt}
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex justify-center mt-6">
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white hover:text-gray-300 transition"
+                >
+                  <FaGithub className="text-2xl" />
+                  <span className="text-lg font-medium">Ver en GitHub</span>
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
