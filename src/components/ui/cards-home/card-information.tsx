@@ -28,14 +28,14 @@ export default function CardInformation({
 }: CardInformationInterface) {
   const { t } = useTranslation();
 
-  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} w-full max-w-full aspect-ratio`;
+  const gridClasses = `col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} w-full max-w-full aspect-ratio `;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: -80, filter: "blur(30px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.4 }}
-      className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 md:p-7`}
+      className={`relative ${background} ${gridClasses} flex flex-col md:flex-row rounded-2xl transition w-full h-full z-50 p-7 max-sm:p-7 max-sm:h-[350px]`}
     >
       <div className="border-gradient-animation absolute inset-0 rounded-xl"></div>
       <div className="border-shadow-animation absolute inset-0 rounded-xl"></div>

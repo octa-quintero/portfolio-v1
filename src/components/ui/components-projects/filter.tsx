@@ -20,12 +20,12 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
         initial={{ opacity: 0, filter: "blur(40px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeOut" }}>
-  <div className="w-full bg-black/25  backdrop-blur-sm p-1 rounded-xl flex flex-wrap justify-between gap-1.5 max-sm:p-0">
+  <div className="w-full bg-black/35  backdrop-blur-sm rounded-xl flex flex-wrap justify-between gap-1.5 max-sm:px-1.5">
     {filters.map((filter) => (
       <button
         key={filter}
         onClick={() => handleFilterClick(filter)}
-        className={`px-1 py-2 rounded-lg text-white text-xl font-bold transition-all duration-300 flex items-center 
+        className={`px-0 py-3 rounded-lg text-white text-xl font-bold transition-all duration-300 flex items-center 
           ${activeFilter === filter ? "text-shadow-md" : ""} hover:text-shadow-lg hover:text-white 
           max-sm:text-xs max-sm:px-0 max-sm:py-3 max-sm:gap-0.2`}
       >
