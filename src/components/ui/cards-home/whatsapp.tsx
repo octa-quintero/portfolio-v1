@@ -5,10 +5,10 @@ import { IconType } from "react-icons";
 interface CardLinkInterface {
   link: string;
   icon: IconType;
-  colStart?: number; // Permite personalizar el inicio de la columna
-  colSpan?: number; // Permite personalizar el número de columnas
-  rowStart?: number; // Permite personalizar el inicio de la fila
-  rowSpan?: number; // Permite personalizar el número de filas
+  colStart?: number;
+  colSpan?: number;
+  rowStart?: number;
+  rowSpan?: number;
 }
 
 export default function CardWhatsApp({
