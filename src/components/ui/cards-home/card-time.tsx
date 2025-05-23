@@ -37,7 +37,6 @@ export default async function CardTime({
   );
   const weather: Weather = await response.json();
 
-  // Obtener la hora actual y las horas de salida y puesta del sol en la zona horaria local
   const currentTime = new Date(weather.dt * 1000);
   const sunriseTime = new Date(weather.sys.sunrise * 1000);
   const sunsetTime = new Date(weather.sys.sunset * 1000);
