@@ -40,7 +40,7 @@ export default function CardProject({
         backgroundSize: "cover", // Asegura que la imagen cubra el contenedor
         backgroundPosition: "center", // Centra la imagen
         backgroundRepeat: "no-repeat",
-        height: "auto", // Deja que el contenedor se ajuste
+        height: "auto",
       }}
     >
       <Link
