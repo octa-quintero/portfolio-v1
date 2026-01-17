@@ -1,7 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// Aquí definimos los recursos de los idiomas
 const resources = {
   en: {
     translation: {
@@ -15,8 +14,8 @@ const resources = {
       "project_description": "Discover my latest projects",
       "github": "GITHUB",
       "github_description": "Explore my projects and contributions",
-      "recently_listened": "Recently listened", // Traducción agregada
-      "listen_on_spotify": "Listen on Spotify", // Traducción agregada
+      "recently_listened": "Recently listened",
+      "listen_on_spotify": "Listen on Spotify",
       "clear_sky": "Clear Sky",
       "milan": "Milan, IT",
       "online": "Online",
@@ -29,6 +28,7 @@ const resources = {
       "eventmap_description": "EventMap🚗, an app for Uber, Cabify and similar drivers. It allows you to view high-demand areas on an interactive map, filter upcoming events, and optimize routes with Google Maps. It also enables event creation and notifications to maximize earnings and reduce expenses. A game-changer for trip planning!",
       "pixelgaming_description": "PixelGaming🌻 is a site for video game lovers where you can manage your collection, share experiences, and discover new titles. It offers search by name, category filtering, profile and game management tools, an admin panel for a safe environment, token-based password recovery, and a Top2024 section with the most popular games. Users can also leave reviews and feedback.",
       "talentplace_description": "TalentPlace🚀 was created to connect companies, startups, and junior IT developers on an intuitive and efficient platform. Its goal is to simplify the talent search process, giving companies quick access to emerging professionals and helping juniors find job opportunities.",
+      "habit-go_description": "Habit-GO🐰 was designed to help users build and maintain healthy habits through an intuitive tracking system and reward mechanism. The goal is to make habit formation an engaging and motivating experience, offering real-time progress tracking, visual streak indicators, and a gamified reward system that celebrates user achievements and keeps them committed to their personal objectives.",
       "portfolio_description": "This is my personal portfolio, designed to showcase my projects and skills. It also integrates APIs like Discord and Spotify to provide real-time updates on my status and activity. Through these connections, the portfolio offers a more dynamic and current view of my interests and work.",
     },
   },
@@ -44,8 +44,8 @@ const resources = {
       "project_description": "Descubre mis proyectos más recientes",
       "github": "GITHUB",
       "github_description": "Explora mis proyectos y contribuciones",
-      "recently_listened": "Escuchado recientemente", // Traducción agregada
-      "listen_on_spotify": "Escuchar en Spotify", // Traducción agregada
+      "recently_listened": "Escuchado recientemente",
+      "listen_on_spotify": "Escuchar en Spotify",
       "clear_sky": "Cielo claro",
       "milan": "Milán, IT",
       "online": "En línea",
@@ -59,18 +59,19 @@ const resources = {
       "pixelgaming_description": "PixelGaming🌻 es un sitio para los amantes de los videojuegos, donde puedes gestionar tu colección, compartir experiencias y descubrir nuevos títulos. Ofrece búsqueda por nombre, filtrado por categorías, y herramientas para gestionar tu perfil y juegos. Con un panel de administración para mantener un entorno seguro, restauración de contraseñas mediante token y una sección Top2024 con los juegos más populares, todo con una interfaz visualmente atractiva y responsive. Además, permite a los usuarios dejar reseñas y opiniones sobre cada juego.",
       "talentplace_description": "TalentPlace🚀 fue creada para conectar empresas, startups y desarrolladores IT juniors en una plataforma intuitiva y eficiente. Su objetivo es simplificar el proceso de búsqueda de talento, brindando a las empresas acceso rápido a profesionales en crecimiento y facilitando a los juniors oportunidades para ingresar al mundo laboral.",
       "portfolio_description": "Este es mi portafolio personal, diseñado para mostrar mis proyectos y habilidades. Además, cuenta con integración a APIs como la de Discord y Spotify, para obtener información en tiempo real sobre mi estado y actividad. A través de estas conexiones, el portafolio ofrece una visión más dinámica y actualizada de mis intereses y trabajo.",
+      "habit-go_description": "Habit-GO🐰 fue creada para ayudar a usuarios a construir y mantener hábitos mediante un seguimiento con un sistema de recompensas. Su objetivo esla formación de hábitos en una experiencia motivante e intuitiva, brindando a los usuarios herramientas de seguimiento en tiempo real, rachas visuales y un sistema de recompensas que reconoce sus logros y los mantiene comprometidos con sus objetivos personales.",
     },
   },
 };
 
 i18n
-  .use(initReactI18next) // Conectamos con React
+  .use(initReactI18next)
   .init({
     resources,
-    lng: "en", // Idioma predeterminado
-    fallbackLng: "en", // Si el idioma no está disponible, usa inglés
+    lng: "en",
+    fallbackLng: "en", 
     interpolation: {
-      escapeValue: false, // React ya se encarga del escape de valores
+      escapeValue: false,
     },
   });
 

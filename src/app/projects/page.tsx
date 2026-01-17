@@ -48,7 +48,17 @@ const projects = [
     github: "https://github.com/IgrowkerTraining/i002-talentplace-back"
   },
   { 
-    id: 5, 
+  id: 5, 
+  title: "Habit-GO", 
+  description: "habit-go_description", 
+  image: "/projects/habit-go.png", 
+  category: ["PERSONALES"], 
+  technologies: ["TypeScript", "Next.js", "Tailwind CSS", "NestJS", "PostgreSQL"],
+  background: ["#ACE01D", "#4E6B3D"],
+  github: "https://github.com/octa-quintero/habit-go-backend",
+},
+  { 
+    id: 6, 
     title: "Portfolio", 
     description: "portfolio_description", 
     image: "/projects/portfolio.png", 
@@ -115,13 +125,12 @@ export default function Projects() {
             colSpan={1}
             rowStart={1}
             rowSpan={1}
-            projects={filteredProjects} // Pasamos los proyectos filtrados
+            projects={filteredProjects}
           />
         </Grid>
 
         <ProjectsFilter onFilterChange={setFilter} />
 
-        {/* Ajustamos el Grid para mostrar los proyectos en una sola columna en dispositivos móviles */}
         <Grid columns={1} rows={filteredProjects.length}>
           {filteredProjects.map((project, index) => (
             <CardProject

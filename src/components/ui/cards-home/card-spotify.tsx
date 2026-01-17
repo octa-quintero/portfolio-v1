@@ -31,20 +31,18 @@ export default function SpotifyCard({
     trackUrl: string | null;
   } | null>(null);
 
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+const [loading, setLoading] = useState<boolean>(true);
+const [error, setError] = useState<string | null>(null);
 
+useEffect(() => {
   const defaultTrack = {
-  song: 'Jugo',
-  artist: 'Los Espíritus',
-  albumArt: 'https://i.scdn.co/image/ab67616d0000b2732ccaa2ad26588fdc1b653c60',
-  trackUrl: 'https://open.spotify.com/track/0PJPcduHwXP4NUp2rd6Kk7',
-};
+    song: 'Jugo',
+    artist: 'Los Espíritus',
+    albumArt: 'https://i.scdn.co/image/ab67616d0000b2732ccaa2ad26588fdc1b653c60',
+    trackUrl: 'https://open.spotify.com/track/0PJPcduHwXP4NUp2rd6Kk7',
+  };
 
-  
-
-  useEffect(() => {
-    const fetchCurrentTrack = async () => {
+  const fetchCurrentTrack = async () => {
       setLoading(true);
       setError(null);
 
