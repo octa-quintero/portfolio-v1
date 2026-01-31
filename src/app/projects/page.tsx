@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import Grid from "@/components/ui/container/container";
 import Navbar from "@/components/ui/components-projects/navbar";
 import ProjectsFilter from "@/components/ui/components-projects/filter";
@@ -71,7 +70,6 @@ const projects = [
 ];
 
 export default function Projects() {
-  const { t } = useTranslation();
   const [filter, setFilter] = useState<string>("TODOS");
 
   const filteredProjects = filter === "TODOS"
