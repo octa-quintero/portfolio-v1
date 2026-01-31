@@ -13,7 +13,6 @@ export default {
     { pattern: /col-span-\d+/ },
     { pattern: /row-start-\d+/ },
     { pattern: /row-span-\d+/ },
-    { pattern: /aspect-\[1\/1\]/ },
   ],
   theme: {
     extend: {
