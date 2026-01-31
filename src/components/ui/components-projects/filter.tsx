@@ -1,14 +1,21 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface FilterProps {
   onFilterChange: (filter: string) => void;
 }
 
 const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<string>("TODOS");
-  const filters = ["TODOS", "PERSONALES", "EXPERIENCIAS", "RECOMENDADOS"];
+  const filterKeys = [
+    { key: "filter_all", value: "TODOS" },
+    { key: "filter_personal", value: "PERSONALES" },
+    { key: "filter_experience", value: "EXPERIENCIAS" },
+    { key: "filter_recommended", value: "RECOMENDADOS" },
+  ];
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
@@ -21,18 +28,18 @@ const ProjectsFilter: React.FC<FilterProps> = ({ onFilterChange }) => {
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeOut" }}>
   <div className="w-full bg-black/35  backdrop-blur-sm rounded-xl flex flex-wrap justify-between gap-1.5 max-sm:px-1.5 px-20">
-    {filters.map((filter) => (
+    {filterKeys.map(({ key, value }) => (
       <button
-        key={filter}
-        onClick={() => handleFilterClick(filter)}
+        key={value}
+        onClick={() => handleFilterClick(value)}
         className={`px-0 py-3 rounded-lg text-white text-xl font-bold transition-all duration-300 flex items-center 
-          ${activeFilter === filter ? "text-shadow-md" : ""} hover:text-shadow-lg hover:text-white 
+          ${activeFilter === value ? "text-shadow-md" : ""} hover:text-shadow-lg hover:text-white 
           max-sm:text-xs max-sm:px-0 max-sm:py-3 max-sm:gap-0.2`}
       >
-        {filter === "RECOMENDADOS" && (
+        {value === "RECOMENDADOS" && (
           <FaStar className="mr-0.1 text-yellow-500 text-xl max-sm:text-sm" />
         )}
-        {filter}
+        {t(key)}
       </button>
     ))}
   </div>

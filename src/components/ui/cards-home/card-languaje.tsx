@@ -22,7 +22,10 @@ export default function LanguageSwitch({
   const { language, changeLanguage } = useStore();
 
   const toggleLanguage = () => {
-    changeLanguage(language === 'en' ? 'es' : 'en');
+    const languages = ['es', 'en', 'it'];
+    const currentIndex = languages.indexOf(language);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    changeLanguage(languages[nextIndex]);
   };
 
   return (
@@ -33,19 +36,19 @@ export default function LanguageSwitch({
       className={`${background} grid place-items-center outline-slate-50 relative rounded-2xl transition z-100 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan} aspect-square`}
     >
       <label
-        className="flex justify-center scale-150 h-8 w-16 max-sm:h-6 max-sm:w-12 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-[#0a0a0acc]"
+        className="flex justify-center scale-150 h-8 w-24 max-sm:h-6 max-sm:w-20 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-[#0a0a0acc]"
         aria-label="Switch language"
       >
         {/* Checkbox input */}
         <input
           type="checkbox"
           className="sr-only peer"
-          checked={language === 'es'}
+          checked={language !== 'es'}
           onChange={toggleLanguage}
         />
         {/* Slider */}
         <span
-          className="peer h-8 w-16 max-sm:h-6 max-sm:w-12 flex items-center justify-between rounded-full bg-gray-300 p-1 max-sm:p-0.5 transition-all"
+          className="peer h-8 w-24 max-sm:h-6 max-sm:w-20 flex items-center justify-between rounded-full bg-gray-300 p-1 max-sm:p-0.5 transition-all"
         >
           {/* Spanish flag */}
           <Image
@@ -68,6 +71,18 @@ export default function LanguageSwitch({
             className={`transition-all duration-500 ease-in-out max-sm:w-5 max-sm:h-5 ${
               language === 'en'
                 ? 'opacity-100 drop-shadow-[0_0_10px_#1E90FF]'
+                : 'opacity-50 drop-shadow-none'
+            }`}
+          />
+          {/* Italian flag */}
+          <Image
+            src="/italy.svg"
+            alt="Italia"
+            width={25}
+            height={20}
+            className={`transition-all duration-500 ease-in-out max-sm:w-5 max-sm:h-5 ${
+              language === 'it'
+                ? 'opacity-100 drop-shadow-[0_0_10px_#00AA44]'
                 : 'opacity-50 drop-shadow-none'
             }`}
           />

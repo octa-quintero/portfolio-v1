@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Grid from "@/components/ui/container/container";
 import Navbar from "@/components/ui/components-projects/navbar";
 import ProjectsFilter from "@/components/ui/components-projects/filter";
@@ -70,6 +71,7 @@ const projects = [
 ];
 
 export default function Projects() {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState<string>("TODOS");
 
   const filteredProjects = filter === "TODOS"
@@ -83,7 +85,7 @@ export default function Projects() {
         <Grid columns={1} rows={1}>
           <Navbar
             image="/pixel.gif"
-            title="PROJECTS"
+            title="projects"
             background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
             colStart={1}
             colSpan={1}
@@ -119,7 +121,7 @@ export default function Projects() {
         <Grid columns={1} rows={1}>
           <Navbar
             image="/pixel.gif"
-            title="PROJECTS"
+            title="projects"
             background="bg-gradient-to-b from-[#0D0D0D] via-[#1e2124] to-[#0D0D0D]"
             colStart={1}
             colSpan={1}

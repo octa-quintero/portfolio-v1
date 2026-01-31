@@ -5,7 +5,7 @@ import Grid from "@/components/ui/container/container";
 import CardLinkedin from "@/components/ui/cards-home/card-linkedin";
 import CardCv from "@/components/ui/cards-home/card-cv";
 import CardCat from "@/components/ui/cards-home/card-cat";
-import CardText from "@/components/ui/cards-home/card-text";
+import CardBadges from "@/components/ui/cards-home/card-badges";
 import CardInformation from "@/components/ui/cards-home/card-information";
 import ThemeCard from "@/components/ui/cards-home/card-theme";
 import CardDiscord from "@/components/ui/cards-home/card-discord";
@@ -41,7 +41,7 @@ export default function App() {
           <CardProject link="/projects" Icon={<FaCode size={45} className="text-gray-900 group-hover:text-white transition-all duration-300" />} colStart={3} colSpan={2} rowStart={3} rowSpan={1} titleKey="project" subtitleKey="project_description" />
           <CardGitHub link="https://github.com/octa-quintero" Icon={<FaGithub size={45} className="text-gray-900 group-hover:text-white transition-all duration-300" />} colStart={1} colSpan={2} rowStart={4} rowSpan={1} />
           <CardSkills background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]" colStart={3} colSpan={1} rowStart={4} rowSpan={1} />
-          <CardText background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]" titleKey="" mainText="+2" subtitleKey="YEARS OLD" colStart={4} colSpan={1} rowStart={4} rowSpan={1} />
+          <CardBadges background="bg-gradient-to-b from-[#1e2124] to-[#2f3136]" colStart={4} colSpan={1} rowStart={4} rowSpan={1} />
           <SpotifyCard background="bg-[#1ed760]" colStart={1} colSpan={2} rowStart={5} rowSpan={1} />
           <CardDiscord userId="460652984175689743" colStart={3} colSpan={1} rowStart={5} rowSpan={1} invitationLink="https://discord.gg/Y3cf2PARER" />
           <CardEmail link="octa.quinteroo@gmail.com" icon={SiGmail} colStart={4} colSpan={1} rowStart={5} rowSpan={1} />
