@@ -1,4 +1,3 @@
-import "./globals.css";
 import { FaGithub, FaCode, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import Grid from "@/components/ui/container/container";
@@ -45,7 +44,7 @@ export default function App() {
           <SpotifyCard background="bg-[#1ed760]" colStart={1} colSpan={2} rowStart={5} rowSpan={1} />
           <CardDiscord userId="460652984175689743" colStart={3} colSpan={1} rowStart={5} rowSpan={1} invitationLink="https://discord.gg/Y3cf2PARER" />
           <CardEmail link="octa.quinteroo@gmail.com" icon={SiGmail} colStart={4} colSpan={1} rowStart={5} rowSpan={1} />
-          <CardTime background="bg-gradient-to-t from-[#1e2124] to-[#2f3136]" city="Milan" colStart={2} colSpan={2} rowStart={6} rowSpan={1} titleKey={""} subtitleKey={""} />
+          <CardTime background="bg-gradient-to-t from-[#1e2124] to-[#2f3136]" city="Cremona" colStart={2} colSpan={2} rowStart={6} rowSpan={1} titleKey={""} subtitleKey={""} />
           <CardWhatsApp icon={FaWhatsapp} link="https://wa.me/+393445549403" colStart={1} colSpan={1} rowStart={6} rowSpan={1} />
           <CardCat background="bg-gradient-to-b from-[#1e2124] to-[#2f3136] " colStart={4} colSpan={1} rowStart={6} rowSpan={1}/>
         </Grid>
