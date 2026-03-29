@@ -9,6 +9,7 @@ import { FaGithub } from "react-icons/fa";
 const TechIcons = [
   { src: '/typescript.svg', alt: 'TypeScript' },
   { src: '/javascript.svg', alt: 'JavaScript' },
+  { src: '/python.svg', alt: 'Phyton' },
   { src: '/nestjs.svg', alt: 'NestJS' },
   { src: '/node.svg', alt: 'Node.js' },
   { src: '/tailwindcss.svg', alt: 'Tailwind CSS' },

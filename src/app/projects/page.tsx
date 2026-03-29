@@ -8,6 +8,16 @@ import CardProject from "@/components/ui/components-projects/projects";
 
 const projects = [
   { 
+    id: 1, 
+    title: "Pixel Gaming", 
+    description: "pixelgaming_description", 
+    image: "/projects/pixel-gaming.png", 
+    category: ["RECOMENDADOS", "PERSONALES"], 
+    technologies: ["JavaScript", "Node.js", "React", "PostgreSQL"],
+    background: ["#a8a807", "#242402"],
+    github: "https://github.com/octa-quintero/PixelGaming"
+  },
+  { 
     id: 2, 
     title: "Crewland", 
     description: "crewland_description", 
@@ -28,23 +38,13 @@ const projects = [
     github: "https://github.com/IgrowkerTraining/i003-eventmap-front"
   },
   { 
-    id: 1, 
-    title: "Pixel Gaming", 
-    description: "pixelgaming_description", 
-    image: "/projects/pixel-gaming.png", 
-    category: ["RECOMENDADOS", "PERSONALES"], 
-    technologies: ["JavaScript", "Node.js", "React", "PostgreSQL"],
-    background: ["#a8a807", "#242402"],
-    github: "https://github.com/octa-quintero/PixelGaming"
-  },
-  { 
     id: 4, 
     title: "Talent Place", 
     description: "talentplace_description", 
     image: "/projects/talent-place.jpg", 
     category: ["EXPERIENCIAS", "RECOMENDADOS"], 
     technologies: ["Next.js", "Node.js", "TypeScript", "PostgreSQL"],
-    background: ["#0cafc4", "#0a2124"],
+    background: ["#0cafc4", "#CC00FF"],
     github: "https://github.com/IgrowkerTraining/i002-talentplace-back"
   },
   { 
@@ -66,6 +66,16 @@ const projects = [
     technologies: ["TypeScript", "Next.js", "Tailwind CSS"],
     background: ["#b90bd4", "#370140"],
     github: "https://github.com/octa-quintero/portfolio-v1"
+  },
+    { 
+    id: 7, 
+    title: "Biotasys", 
+    description: "biotasys_description", 
+    image: "/projects/biotasys.png", 
+    category: ["EXPERIENCIAS"], 
+    technologies: ["TypeScript", "Phyton", "NestJS", "Tailwind CSS", "React"],
+    background: ["#006C75", "#00EBFF"],
+    github: "https://github.com/IgrowkerTraining/i006-biotasys-fullstack"
   },
 ];
 

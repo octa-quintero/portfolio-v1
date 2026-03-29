@@ -14,15 +14,15 @@ export interface CardSkillsInterface {
 const icons = [
   { src: '/typescript.svg', alt: 'TypeScript'},
   { src: '/javascript.svg', alt: 'JavaScript'},
+  { src: '/python.svg', alt: 'Python'},
   { src: '/nestjs.svg', alt: 'NestJS'},
   { src: '/node.svg', alt: 'Node.js' },
   { src: '/tailwindcss.svg', alt: 'Tailwind CSS'},
   { src: '/reactjs.svg', alt: 'React' },
-  { src: '/postgresql.svg', alt: 'PostgreSQL'},
   { src: '/nextjs.svg', alt: 'Next.js'},
+  { src: '/postgresql.svg', alt: 'PostgreSQL'},
   { src: '/github.svg', alt: 'Git' },
   { src: '/git.svg', alt: 'Git'},
-  { src: '/css.svg', alt: 'CSS'},
   { src: '/html.svg', alt: 'HTML'},
 ];
 

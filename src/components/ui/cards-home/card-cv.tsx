@@ -3,6 +3,7 @@
 import { TbFileCv } from "react-icons/tb"; // Importamos el icono TbFileCv
 import { motion } from "framer-motion"; // Importamos framer-motion
 import { FiDownload } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 interface CardLinkInterface {
   colStart?: number;
@@ -18,7 +19,15 @@ export default function CardCv({
   rowSpan = 1,
 }: CardLinkInterface) {
 
-  const cvPath = '/cv-español.pdf';
+  const { i18n } = useTranslation();
+
+  const cvLinks: Record<string, string> = {
+    en: 'https://docs.google.com/document/d/1l9b_sY1MZbQgHJTsf1TsFANF0CsdCqAW/edit',
+    es: 'https://docs.google.com/document/d/187jmLsaNqEzYcTLD2W8JOOH6N-7TSha6/edit',
+    it: 'https://docs.google.com/document/d/1OJ57fAFP-nZQWOhMhvPPOQAPFvczrawD/edit',
+  };
+
+  const cvLink = cvLinks[i18n.language] || cvLinks.en;
 
   return (
     <motion.div
@@ -28,8 +37,9 @@ export default function CardCv({
       className={`w-full z-50 col-start-${colStart} col-span-${colSpan} row-start-${rowStart} row-span-${rowSpan}`}
     >
       <a
-        href={cvPath}
-        download
+        href={cvLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className={`group bg-gradient-to-b from-[#1e2124] to-[#2f3136] grid place-items-center outline-slate-50 relative rounded-2xl transition-all duration-300 w-full aspect-square overflow-hidden`}
       >
         <span className="absolute inset-0 bg-[#af2956] opacity-0 transition-all duration-500 rounded-full scale-0 group-hover:scale-150 group-hover:opacity-80 overflow-hidden" />
