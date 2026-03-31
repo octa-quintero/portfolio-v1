@@ -1,7 +1,7 @@
 "use client";
 
-import { TbFileCv } from "react-icons/tb"; // Importamos el icono TbFileCv
-import { motion } from "framer-motion"; // Importamos framer-motion
+import { TbFileCv } from "react-icons/tb";
+import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 
