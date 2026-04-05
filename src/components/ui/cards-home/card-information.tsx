@@ -47,8 +47,6 @@ export default function CardInformation({
           opacity: 0.08,
         }}
       ></div>
-
-      {/* Sección de texto */}
       <div
         className="flex flex-col justify-end items-start w-full md:w-1/2 h-full p-3 md:p-3 z-10 rounded-l-2xl max-sm:w-full max-sm:h-full max-sm:items-left max-sm:justify-center max-sm:text-center"
         style={{ fontFamily: 'MyFont' }}
@@ -67,8 +65,6 @@ export default function CardInformation({
           {t(text)}
         </p>
       </div>
-
-      {/* Imagen (oculta en móviles) */}
       <div
         className="flex flex-col justify-start items-start w-1/2 h-full p-0 z-10 rounded-l-2xl max-sm:hidden"
         style={{

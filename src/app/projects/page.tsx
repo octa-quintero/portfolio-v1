@@ -15,7 +15,8 @@ const projects = [
     category: ["RECOMENDADOS", "PERSONALES"], 
     technologies: ["JavaScript", "Node.js", "React", "PostgreSQL"],
     background: ["#a8a807", "#242402"],
-    github: "https://github.com/octa-quintero/PixelGaming"
+    github: "https://github.com/octa-quintero/PixelGaming",
+    createdAt: new Date("2023-06-15")
   },
   { 
     id: 2, 
@@ -25,7 +26,8 @@ const projects = [
     category: ["EXPERIENCIAS", "RECOMENDADOS"], 
     technologies: ["TypeScript", "NestJS", "Next.js", "Tailwind CSS", "PostgreSQL"],
     background: ["#3805A8", "#0F022B"],
-    github: "https://github.com/IgrowkerTraining/i004-crewland-back"
+    github: "https://github.com/IgrowkerTraining/i004-crewland-back",
+    createdAt: new Date("2023-09-20")
   },
   { 
     id: 3, 
@@ -35,7 +37,8 @@ const projects = [
     category: ["EXPERIENCIAS"], 
     technologies: ["TypeScript", "PostgreSQL", "NestJS", "Next.js"],
     background: ["#13a87e", "#073d3d"],
-    github: "https://github.com/IgrowkerTraining/i003-eventmap-front"
+    github: "https://github.com/IgrowkerTraining/i003-eventmap-front",
+    createdAt: new Date("2024-02-10")
   },
   { 
     id: 4, 
@@ -45,18 +48,20 @@ const projects = [
     category: ["EXPERIENCIAS", "RECOMENDADOS"], 
     technologies: ["Next.js", "Node.js", "TypeScript", "PostgreSQL"],
     background: ["#0cafc4", "#CC00FF"],
-    github: "https://github.com/IgrowkerTraining/i002-talentplace-back"
+    github: "https://github.com/IgrowkerTraining/i002-talentplace-back",
+    createdAt: new Date("2024-01-05")
   },
   { 
-  id: 5, 
-  title: "Habit-GO", 
-  description: "habit-go_description", 
-  image: "/projects/habit-go.png", 
-  category: ["PERSONALES"], 
-  technologies: ["TypeScript", "Next.js", "Tailwind CSS", "NestJS", "PostgreSQL"],
-  background: ["#ACE01D", "#4E6B3D"],
-  github: "https://github.com/octa-quintero/habit-go-backend",
-},
+    id: 5, 
+    title: "Habit-GO", 
+    description: "habit-go_description", 
+    image: "/projects/habit-go.png", 
+    category: ["PERSONALES"], 
+    technologies: ["TypeScript", "Next.js", "Tailwind CSS", "NestJS", "PostgreSQL"],
+    background: ["#ACE01D", "#4E6B3D"],
+    github: "https://github.com/octa-quintero/habit-go-backend",
+    createdAt: new Date("2024-11-12")
+  },
   { 
     id: 6, 
     title: "Portfolio", 
@@ -65,9 +70,10 @@ const projects = [
     category: ["PERSONALES"], 
     technologies: ["TypeScript", "Next.js", "Tailwind CSS"],
     background: ["#b90bd4", "#370140"],
-    github: "https://github.com/octa-quintero/portfolio-v1"
+    github: "https://github.com/octa-quintero/portfolio-v1",
+    createdAt: new Date("2024-03-18")
   },
-    { 
+  { 
     id: 7, 
     title: "Biotasys", 
     description: "biotasys_description", 
@@ -75,7 +81,8 @@ const projects = [
     category: ["EXPERIENCIAS"], 
     technologies: ["TypeScript", "Phyton", "NestJS", "Tailwind CSS", "React"],
     background: ["#006C75", "#00EBFF"],
-    github: "https://github.com/IgrowkerTraining/i006-biotasys-fullstack"
+    github: "https://github.com/IgrowkerTraining/i006-biotasys-fullstack",
+    createdAt: new Date("2026-03-01")
   },
 ];
 
@@ -85,6 +92,9 @@ export default function Projects() {
   const filteredProjects = filter === "TODOS"
     ? projects
     : projects.filter((project) => project.category.includes(filter));
+
+  // Ordenar por fecha de creación (más recientes primero)
+  const sortedProjects = [...filteredProjects].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 
   return (
     <>
@@ -99,14 +109,14 @@ export default function Projects() {
             colSpan={1}
             rowStart={1}
             rowSpan={1}
-            projects={filteredProjects}
+            projects={sortedProjects}
           />
         </Grid>
 
         <ProjectsFilter onFilterChange={setFilter} />
 
         <Grid columns={3} rows={1}>
-          {filteredProjects.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <CardProject
               key={`${project.id}-${filter}`}
               title={project.title}
@@ -135,14 +145,14 @@ export default function Projects() {
             colSpan={1}
             rowStart={1}
             rowSpan={1}
-            projects={filteredProjects}
+            projects={sortedProjects}
           />
         </Grid>
 
         <ProjectsFilter onFilterChange={setFilter} />
 
-        <Grid columns={1} rows={filteredProjects.length}>
-          {filteredProjects.map((project, index) => (
+        <Grid columns={1} rows={sortedProjects.length}>
+          {sortedProjects.map((project, index) => (
             <CardProject
               key={`${project.id}-${filter}`}
               title={project.title}
