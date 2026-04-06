@@ -92,8 +92,6 @@ export default function Projects() {
   const filteredProjects = filter === "TODOS"
     ? projects
     : projects.filter((project) => project.category.includes(filter));
-
-  // Ordenar por fecha de creación (más recientes primero)
   const sortedProjects = [...filteredProjects].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 
   return (
